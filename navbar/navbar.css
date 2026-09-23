@@ -331,7 +331,7 @@ a {
     width: min(85vw, 360px);
     height: calc(100dvh - var(--cc-navbar-height));
 
-    background: var(--cc-bg);
+    background: var(--cc-dropdown);
 
     overflow-y: auto;
 
@@ -383,36 +383,35 @@ a {
     color: var(--cc-accent);
   }
 
-  .cc-mobile-dropdown-menu {
-    display: grid;
-    grid-template-rows: 0fr;
+.cc-mobile-dropdown-menu {
+  max-height: 0;
+  overflow: hidden;
 
-    overflow: hidden;
+  transition:
+    max-height 220ms ease,
+    opacity 180ms ease;
 
-    transition: grid-template-rows 220ms ease;
-  }
+  opacity: 0;
+}
 
-  .cc-mobile-dropdown-menu > * {
-    min-height: 0;
-  }
-
-  .cc-mobile-dropdown-menu.is-open {
-    grid-template-rows: 1fr;
-  }
-
+.cc-mobile-dropdown-menu.is-open {
+  max-height: 300px;
+  opacity: 1;
+}
+   
   .cc-mobile-dropdown-menu a {
-    display: block;
+  display: block;
 
-    padding: 0.7rem 0 0.7rem 1rem;
+  padding: 0.7rem 0 0.7rem 1rem;
 
-    color: var(--cc-muted);
-    text-decoration: none;
+  color: var(--cc-muted);
+  text-decoration: none;
 
-    font-size: 1rem;
+  font-size: 1rem;
 
-    transition: color var(--cc-transition);
-  }
-
+  transition: color var(--cc-transition);
+}
+   
   .cc-mobile-dropdown-menu a:hover,
   .cc-mobile-dropdown-menu a:focus-visible {
     color: var(--cc-accent);
