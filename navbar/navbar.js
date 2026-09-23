@@ -1,222 +1,190 @@
-function initNavbar() {
+/* =========================================================
+   CRISOL CROWLING — NAVBAR JS
+   ========================================================= */
 
-    document.querySelectorAll(".cc-navbar").forEach((navbar) => {
+document.addEventListener("DOMContentLoaded", () => {
 
-        const mobileToggle = navbar.querySelector(
-            ".cc-navbar-toggle"
-        );
+  const navbar = document.querySelector(".cc-navbar");
 
-        const mobileMenu = navbar.querySelector(
-            ".cc-navbar-mobile"
-        );
+  const menuButton = document.querySelector(".cc-navbar-menu-button");
+  const mobileMenu = document.querySelector(".cc-navbar-mobile");
 
-        const desktopDropdownToggle = navbar.querySelector(
-            ".cc-navbar-dropdown-toggle"
-        );
+  const desktopDropdownToggle = document.querySelector(
+    ".cc-navbar-dropdown-toggle"
+  );
 
-        const desktopDropdown = navbar.querySelector(
-            ".cc-navbar-dropdown"
-        );
+  const desktopDropdownMenu = document.querySelector(
+    ".cc-navbar-dropdown-menu"
+  );
 
-        const mobileDropdownToggle = navbar.querySelector(
-            ".cc-navbar-mobile-dropdown-toggle"
-        );
+  const mobileDropdownToggle = document.querySelector(
+    ".cc-mobile-dropdown-toggle"
+  );
 
-        const mobileSubmenu = navbar.querySelector(
-            ".cc-navbar-mobile-submenu"
-        );
+  const mobileDropdownMenu = document.querySelector(
+    ".cc-mobile-dropdown-menu"
+  );
 
 
-        function closeMobileMenu() {
+  /* =======================================================
+     DESKTOP DROPDOWN
+     ======================================================= */
 
-            if (!mobileMenu || !mobileToggle) return;
+  function closeDesktopDropdown() {
+    if (!desktopDropdownToggle || !desktopDropdownMenu) return;
 
-            mobileMenu.classList.remove("is-open");
+    desktopDropdownToggle.setAttribute("aria-expanded", "false");
+    desktopDropdownMenu.classList.remove("is-open");
+  }
 
-            mobileToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+  function toggleDesktopDropdown() {
+    if (!desktopDropdownToggle || !desktopDropdownMenu) return;
 
-        }
+    const isOpen =
+      desktopDropdownToggle.getAttribute("aria-expanded") === "true";
 
+    desktopDropdownToggle.setAttribute(
+      "aria-expanded",
+      String(!isOpen)
+    );
 
-        function openMobileMenu() {
+    desktopDropdownMenu.classList.toggle("is-open", !isOpen);
+  }
 
-            if (!mobileMenu || !mobileToggle) return;
+  desktopDropdownToggle?.addEventListener(
+    "click",
+    toggleDesktopDropdown
+  );
 
-            mobileMenu.classList.add("is-open");
 
-            mobileToggle.setAttribute(
-                "aria-expanded",
-                "true"
-            );
+  /* =======================================================
+     MOBILE MENU
+     ======================================================= */
 
-        }
+  function openMobileMenu() {
+    menuButton.classList.add("is-open");
+    mobileMenu.classList.add("is-open");
 
+    menuButton.setAttribute("aria-expanded", "true");
+    menuButton.setAttribute("aria-label", "Cerrar menú");
 
-        if (mobileToggle) {
+    mobileMenu.setAttribute("aria-hidden", "false");
 
-            mobileToggle.addEventListener("click", (event) => {
+    document.body.classList.add("cc-mobile-menu-open");
+  }
 
-                event.stopPropagation();
+  function closeMobileMenu() {
+    menuButton.classList.remove("is-open");
+    mobileMenu.classList.remove("is-open");
 
-                const isOpen =
-                    mobileMenu.classList.contains("is-open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "Abrir menú");
 
-                if (isOpen) {
-                    closeMobileMenu();
-                } else {
-                    openMobileMenu();
-                }
+    mobileMenu.setAttribute("aria-hidden", "true");
 
-            });
+    document.body.classList.remove("cc-mobile-menu-open");
+  }
 
-        }
+  function toggleMobileMenu() {
+    const isOpen =
+      menuButton.getAttribute("aria-expanded") === "true";
 
+    if (isOpen) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+  }
 
-        function closeDesktopDropdown() {
+  menuButton?.addEventListener("click", toggleMobileMenu);
 
-            if (
-                !desktopDropdown ||
-                !desktopDropdownToggle
-            ) return;
 
-            desktopDropdown.classList.remove("is-open");
+  /* =======================================================
+     MOBILE COMMISSIONS
+     ======================================================= */
 
-            desktopDropdownToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+  function toggleMobileDropdown() {
+    if (!mobileDropdownToggle || !mobileDropdownMenu) return;
 
-        }
+    const isOpen =
+      mobileDropdownToggle.getAttribute("aria-expanded") === "true";
 
+    mobileDropdownToggle.setAttribute(
+      "aria-expanded",
+      String(!isOpen)
+    );
 
-        if (desktopDropdownToggle) {
+    mobileDropdownMenu.classList.toggle("is-open", !isOpen);
+  }
 
-            desktopDropdownToggle.addEventListener(
-                "click",
-                (event) => {
+  mobileDropdownToggle?.addEventListener(
+    "click",
+    toggleMobileDropdown
+  );
 
-                    event.stopPropagation();
 
-                    const isOpen =
-                        desktopDropdown.classList.contains(
-                            "is-open"
-                        );
+  /* =======================================================
+     CLOSE MOBILE MENU WHEN CLICKING A LINK
+     ======================================================= */
 
-                    if (isOpen) {
+  const mobileLinks = mobileMenu?.querySelectorAll(
+    "a"
+  );
 
-                        closeDesktopDropdown();
-
-                    } else {
-
-                        desktopDropdown.classList.add(
-                            "is-open"
-                        );
-
-                        desktopDropdownToggle.setAttribute(
-                            "aria-expanded",
-                            "true"
-                        );
-
-                    }
-
-                }
-            );
-
-        }
-
-
-        if (
-            mobileDropdownToggle &&
-            mobileSubmenu
-        ) {
-
-            mobileDropdownToggle.addEventListener(
-                "click",
-                () => {
-
-                    const isOpen =
-                        mobileSubmenu.classList.contains(
-                            "is-open"
-                        );
-
-                    if (isOpen) {
-
-                        mobileSubmenu.classList.remove(
-                            "is-open"
-                        );
-
-                        mobileDropdownToggle.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
-
-                    } else {
-
-                        mobileSubmenu.classList.add(
-                            "is-open"
-                        );
-
-                        mobileDropdownToggle.setAttribute(
-                            "aria-expanded",
-                            "true"
-                        );
-
-                    }
-
-                }
-            );
-
-        }
-
-
-        navbar.querySelectorAll(
-            ".cc-navbar-mobile a"
-        ).forEach((link) => {
-
-            link.addEventListener("click", () => {
-                closeMobileMenu();
-            });
-
-        });
-
-
-        document.addEventListener("click", (event) => {
-
-            if (!navbar.contains(event.target)) {
-
-                closeMobileMenu();
-                closeDesktopDropdown();
-
-            }
-
-        });
-
-
-        document.addEventListener("keydown", (event) => {
-
-            if (event.key === "Escape") {
-
-                closeMobileMenu();
-                closeDesktopDropdown();
-
-            }
-
-        });
-
+  mobileLinks?.forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMobileMenu();
     });
+  });
 
-}
+
+  /* =======================================================
+     CLICK OUTSIDE DESKTOP DROPDOWN
+     ======================================================= */
+
+  document.addEventListener("click", (event) => {
+
+    if (
+      desktopDropdownMenu &&
+      desktopDropdownToggle &&
+      !desktopDropdownMenu.contains(event.target) &&
+      !desktopDropdownToggle.contains(event.target)
+    ) {
+      closeDesktopDropdown();
+    }
+
+  });
 
 
-/*
- * Si la navbar ya existe cuando carga la página,
- * la inicializamos normalmente.
- */
+  /* =======================================================
+     ESCAPE KEY
+     ======================================================= */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    initNavbar
-);
+  document.addEventListener("keydown", (event) => {
+
+    if (event.key !== "Escape") return;
+
+    closeDesktopDropdown();
+
+    if (
+      menuButton?.getAttribute("aria-expanded") === "true"
+    ) {
+      closeMobileMenu();
+    }
+
+  });
+
+
+  /* =======================================================
+     RESET MOBILE MENU WHEN SWITCHING TO DESKTOP
+     ======================================================= */
+
+  window.addEventListener("resize", () => {
+
+    if (window.innerWidth > 768) {
+      closeMobileMenu();
+    }
+
+  });
+
+});
