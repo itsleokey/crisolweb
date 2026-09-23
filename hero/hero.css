@@ -47,7 +47,7 @@
     position: relative;
     transform: none;
     z-index: 2;
-
+   color: #441B52;
     width: max-content;
 
     text-align: center;
@@ -111,7 +111,7 @@
 
     margin-left: -100px;
 
-    background: #4D3456;
+    background: #865A95;
 
     border-radius: 0.5rem;
 
