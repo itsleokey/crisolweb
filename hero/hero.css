@@ -32,6 +32,7 @@
     min-height: 520px;
 
     margin: 0 auto;
+   transform: translateX(-1vw);
 
     display: flex;
     align-items: center;
@@ -178,7 +179,6 @@
 /* =========================================
    MOBILE
    ========================================= */
-
 @media (max-width: 767px) {
 
     .cc-hero {
@@ -191,21 +191,52 @@
     }
 
 
-   .cc-hero-inner {
+    .cc-hero-inner {
         width: 100%;
+
         min-height: 0;
 
         display: flex;
+
         flex-direction: column;
 
         align-items: center;
+       transform: none;
 
         gap: 2.5rem;
+
+        transform: none;
+    }
+
+
+    .cc-hero-book {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        transform: none;
+
+        order: 1;
+
+        width: min(
+            100%,
+            360px
+        );
+
+        margin-left: 0;
     }
 
 
     .cc-hero-content {
         position: relative;
+
+        top: auto;
+        left: auto;
+
+        transform: none;
+
+        order: 2;
 
         width: 100%;
 
@@ -213,10 +244,21 @@
     }
 
 
-    .cc-hero-book {
-        width: min(100%, 360px);
+    .cc-hero-title {
+        font-size: clamp(
+            3rem,
+            14vw,
+            4.5rem
+        );
 
-        margin-left: 0;
+        line-height: 0.85;
+    }
+
+
+    .cc-hero-subtitle {
+        margin-top: 0.8rem;
+
+        font-size: 1rem;
     }
 
 
