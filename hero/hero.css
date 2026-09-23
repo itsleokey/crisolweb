@@ -1,0 +1,227 @@
+/* =========================================
+   CRISOL CROWLING - HERO
+   ========================================= */
+
+.cc-hero {
+    position: relative;
+
+    width: 100%;
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5rem 2rem;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   HERO INNER
+   ========================================= */
+
+.cc-hero-inner {
+    position: relative;
+
+    width: fit-content;
+    max-width: 100%;
+    min-height: 520px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================================
+   TEXT
+   ========================================= */
+
+.cc-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: max-content;
+
+    text-align: center;
+}
+
+
+.cc-hero-title {
+    margin: 0;
+
+    font-family: 'Calistoga', serif;
+
+    font-size: clamp(
+        4rem,
+        7vw,
+        6rem
+    );
+
+    font-weight: 400;
+
+    line-height: 0.82;
+
+    text-align: center;
+}
+
+
+.cc-hero-subtitle {
+    margin: 0;
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-size: clamp(
+        1.2rem,
+        2vw,
+        1.6rem
+    );
+
+    font-weight: 600;
+
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   BOOK
+   ========================================= */
+
+.cc-hero-book {
+    position: relative;
+
+    z-index: 1;
+
+    width: min(
+        360px,
+        40vw
+    );
+
+    aspect-ratio: 360 / 520;
+
+    flex: 0 0 auto;
+
+    margin-left: -100px;
+
+    background: #4D3456;
+
+    border-radius: 0.5rem;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================================
+   OPTIONAL DECORATION
+   ========================================= */
+
+.cc-hero-decoration {
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: #E79DE4;
+
+    opacity: 0.15;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .cc-hero {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+
+    .cc-hero-inner {
+        width: min(100%, 750px);
+    }
+
+
+    .cc-hero-content {
+        left: 20%;
+    }
+
+
+    .cc-hero-book {
+        left: 60%;
+
+        width: min(
+            320px,
+            42vw
+        );
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 767px) {
+
+    .cc-hero {
+        min-height: auto;
+
+        padding:
+            4rem
+            1.25rem
+            5rem;
+    }
+
+
+   .cc-hero-inner {
+        width: 100%;
+        min-height: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 2.5rem;
+    }
+
+
+    .cc-hero-content {
+        position: relative;
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .cc-hero-book {
+        width: min(100%, 360px);
+
+        margin-left: 0;
+    }
+
+
+    .cc-hero-decoration {
+        display: none;
+    }
+
+}
