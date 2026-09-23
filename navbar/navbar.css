@@ -1,0 +1,544 @@
+/* =========================================
+   CRISOL CROWLING - NAVBAR
+   Visual version
+   ========================================= */
+
+
+/* =========================================
+   VARIABLES
+   ========================================= */
+
+:root {
+    --cc-accent: #E79DE4;
+    --cc-navbar-bg: #27172D;
+    --cc-navbar-text: #EDEDED;
+    --cc-navbar-muted: #BAA3C9;
+    --cc-navbar-border: #E79DE4;
+
+    --cc-navbar-padding-x: 2rem;
+    --cc-navbar-padding-y: 1rem;
+    --cc-navbar-gap: 2rem;
+
+    --cc-navbar-dropdown-radius: 0.5rem;
+
+    --cc-navbar-name: #E79DE4;
+    --cc-navbar-dropbg: #4D3456;
+}
+
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+
+.cc-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    background: var(--cc-navbar-bg);
+
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cfilter%20id%3D%22noise%22%3E%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.875%22%20result%3D%22noise%22%20%2F%3E%20%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220.19921875%200%200%200%200%200%200.109375%200%200%200%200%200%200.23828125%200%200%200%200%200%200.23046875%200%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20filter%3D%22url%28%23noise%29%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22transparent%22%20opacity%3D%221%22%20%2F%3E%3C%2Fsvg%3E');
+
+    background-size: 512px;
+    background-position: center;
+    background-repeat: repeat;
+
+    color: var(--cc-navbar-text);
+
+    border: 0;
+
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1em;
+    line-height: 1.1;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   INNER
+   ========================================= */
+
+.cc-navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    min-height: 4.5rem;
+
+    box-sizing: border-box;
+
+    padding:
+        var(--cc-navbar-padding-y)
+        var(--cc-navbar-padding-x);
+}
+
+
+/* =========================================
+   BRAND
+   ========================================= */
+
+.cc-navbar-brand {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 0.75rem;
+
+    color: var(--cc-navbar-name);
+    text-decoration: none;
+
+    flex-shrink: 0;
+}
+
+
+/* Logo placeholder */
+
+.cc-navbar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2rem;
+    height: 2rem;
+
+    flex-shrink: 0;
+
+    color: var(--cc-accent);
+
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+
+/* Brand name */
+
+.cc-navbar-name {
+    white-space: nowrap;
+
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+
+    font-family: 'Calistoga', serif;
+}
+
+
+/* =========================================
+   DESKTOP NAV
+   ========================================= */
+
+.cc-navbar-menu {
+    display: flex;
+    align-items: center;
+
+    gap: var(--cc-navbar-gap);
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+.cc-navbar-item {
+    position: relative;
+}
+
+
+/* =========================================
+   LINKS
+   ========================================= */
+
+.cc-navbar-link,
+.cc-navbar-dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 0.35rem;
+
+    position: relative;
+
+    border: 0;
+    background: transparent;
+
+    padding: 0.35rem 0;
+
+    color: var(--cc-navbar-text);
+
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+/* Underline accent */
+
+.cc-navbar-link::after,
+.cc-navbar-dropdown-toggle::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 1.2px;
+
+    background: var(--cc-accent);
+
+    transition:
+        width 0.2s ease;
+}
+
+
+.cc-navbar-link:hover,
+.cc-navbar-link:focus-visible,
+.cc-navbar-dropdown-toggle:hover,
+.cc-navbar-dropdown-toggle:focus-visible {
+    color: var(--cc-accent);
+}
+
+
+.cc-navbar-link:hover::after,
+.cc-navbar-link:focus-visible::after,
+.cc-navbar-dropdown-toggle:hover::after,
+.cc-navbar-dropdown-toggle:focus-visible::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   DROPDOWN
+   ========================================= */
+
+.cc-navbar-dropdown {
+    position: absolute;
+
+    top: calc(100% + 0.75rem);
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        translateY(-0.25rem);
+
+    display: none;
+
+    min-width: 13rem;
+
+    box-sizing: border-box;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0.5rem;
+
+    background: var(--cc-navbar-dropbg);
+
+    border-radius: var(--cc-navbar-dropdown-radius);
+
+    box-shadow:
+        0 0.5rem 1.5rem rgba(45, 42, 43, 0.08);
+
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cfilter%20id%3D%22noise%22%3E%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.875%22%20result%3D%22noise%22%20%2F%3E%20%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220.19921875%200%200%200%200%200%200.109375%200%200%200%200%200%200.23828125%200%200%200%200%200%200.23046875%200%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20filter%3D%22url%28%23noise%29%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22transparent%22%20opacity%3D%221%22%20%2F%3E%3C%2Fsvg%3E');
+
+    background-size: 512px;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+
+.cc-navbar-dropdown.is-open {
+    display: block;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+.cc-navbar-dropdown li {
+    margin: 0;
+    padding: 0;
+}
+
+
+.cc-navbar-dropdown a {
+    display: block;
+
+    padding: 0.65rem 0.8rem;
+
+    border-radius: 0.3rem;
+
+    color: var(--cc-navbar-text);
+
+    font-size: 0.85rem;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
+}
+
+
+.cc-navbar-dropdown a:hover,
+.cc-navbar-dropdown a:focus-visible {
+    background: rgba(231, 157, 228, 0.08);
+
+    color: var(--cc-accent);
+}
+
+
+/* =========================================
+   MOBILE BUTTON
+   ========================================= */
+
+.cc-navbar-toggle {
+    display: none;
+
+    border: 0;
+    background: transparent;
+
+    padding: 0.35rem;
+
+    color: var(--cc-navbar-text);
+
+    cursor: pointer;
+}
+
+
+/* Hamburger */
+
+.cc-navbar-toggle-icon {
+    display: block;
+
+    position: relative;
+
+    width: 1.5rem;
+    height: 1.1rem;
+}
+
+
+.cc-navbar-toggle-icon::before,
+.cc-navbar-toggle-icon::after,
+.cc-navbar-toggle-icon span {
+    content: "";
+
+    position: absolute;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: currentColor;
+
+    transition:
+        background-color 0.2s ease;
+}
+
+
+.cc-navbar-toggle-icon::before {
+    top: 0;
+}
+
+
+.cc-navbar-toggle-icon span {
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+}
+
+
+.cc-navbar-toggle-icon::after {
+    bottom: 0;
+}
+
+
+.cc-navbar-toggle:hover,
+.cc-navbar-toggle:focus-visible {
+    color: var(--cc-accent);
+}
+
+
+/* =========================================
+   MOBILE MENU
+   ========================================= */
+
+.cc-navbar-mobile {
+    display: none;
+
+    border-top: 1px solid var(--cc-navbar-border);
+}
+
+
+.cc-navbar-mobile.is-open {
+    display: block;
+}
+
+
+.cc-navbar-mobile-list {
+    list-style: none;
+
+    margin: 0;
+
+    padding:
+        0.75rem
+        var(--cc-navbar-padding-x)
+        1.25rem;
+}
+
+
+.cc-navbar-mobile-link,
+.cc-navbar-mobile-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 0;
+    background: transparent;
+
+    padding: 0.75rem 0;
+
+    color: var(--cc-navbar-text);
+
+    font: inherit;
+    font-size: 0.95rem;
+
+    text-align: left;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.cc-navbar-mobile-link:hover,
+.cc-navbar-mobile-link:focus-visible,
+.cc-navbar-mobile-dropdown-toggle:hover,
+.cc-navbar-mobile-dropdown-toggle:focus-visible {
+    color: var(--cc-accent);
+}
+
+
+/* =========================================
+   MOBILE COMMISSIONS
+   ========================================= */
+
+.cc-navbar-mobile-submenu {
+    display: none;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0 0 0.5rem 1rem;
+}
+
+
+.cc-navbar-mobile-submenu.is-open {
+    display: block;
+}
+
+
+.cc-navbar-mobile-submenu a {
+    display: block;
+
+    padding: 0.55rem 0;
+
+    color: var(--cc-navbar-muted);
+
+    font-size: 0.875rem;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.cc-navbar-mobile-submenu a:hover,
+.cc-navbar-mobile-submenu a:focus-visible {
+    color: var(--cc-accent);
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 767px) {
+
+    .cc-navbar-inner {
+        min-height: 4rem;
+
+        padding:
+            0.8rem
+            1.25rem;
+    }
+
+
+    .cc-navbar-name {
+        font-size: 1.4rem;
+    }
+
+
+    .cc-navbar-menu {
+        display: none;
+    }
+
+
+    .cc-navbar-toggle {
+        display: block;
+    }
+
+
+    .cc-navbar-mobile-list {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+.cc-navbar a:focus-visible,
+.cc-navbar button:focus-visible {
+    outline: 2px solid var(--cc-accent);
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cc-navbar *,
+    .cc-navbar *::before,
+    .cc-navbar *::after {
+        transition: none !important;
+    }
+
+}
