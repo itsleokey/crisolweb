@@ -5,22 +5,17 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const navbar = document.querySelector(".cc-navbar");
-
   const menuButton = document.querySelector(".cc-navbar-menu-button");
   const mobileMenu = document.querySelector(".cc-navbar-mobile");
-
   const desktopDropdownToggle = document.querySelector(
     ".cc-navbar-dropdown-toggle"
   );
-
   const desktopDropdownMenu = document.querySelector(
     ".cc-navbar-dropdown-menu"
   );
-
   const mobileDropdownToggle = document.querySelector(
     ".cc-mobile-dropdown-toggle"
   );
-
   const mobileDropdownMenu = document.querySelector(
     ".cc-mobile-dropdown-menu"
   );
@@ -32,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function closeDesktopDropdown() {
     if (!desktopDropdownToggle || !desktopDropdownMenu) return;
-
     desktopDropdownToggle.setAttribute("aria-expanded", "false");
     desktopDropdownMenu.classList.remove("is-open");
   }
@@ -64,24 +58,18 @@ document.addEventListener("DOMContentLoaded", () => {
   function openMobileMenu() {
     menuButton.classList.add("is-open");
     mobileMenu.classList.add("is-open");
-
     menuButton.setAttribute("aria-expanded", "true");
     menuButton.setAttribute("aria-label", "Cerrar menú");
-
     mobileMenu.setAttribute("aria-hidden", "false");
-
     document.body.classList.add("cc-mobile-menu-open");
   }
 
   function closeMobileMenu() {
     menuButton.classList.remove("is-open");
     mobileMenu.classList.remove("is-open");
-
     menuButton.setAttribute("aria-expanded", "false");
     menuButton.setAttribute("aria-label", "Abrir menú");
-
     mobileMenu.setAttribute("aria-hidden", "true");
-
     document.body.classList.remove("cc-mobile-menu-open");
   }
 
