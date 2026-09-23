@@ -45,7 +45,7 @@
 
 .cc-hero-content {
     position: relative;
-
+    transform: none;
     z-index: 2;
 
     width: max-content;
@@ -143,40 +143,6 @@
 
 
 /* =========================================
-   TABLET
-   ========================================= */
-
-@media (max-width: 900px) {
-
-    .cc-hero {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }
-
-
-    .cc-hero-inner {
-        width: min(100%, 750px);
-    }
-
-
-    .cc-hero-content {
-        left: 20%;
-    }
-
-
-    .cc-hero-book {
-        left: 60%;
-
-        width: min(
-            320px,
-            42vw
-        );
-    }
-
-}
-
-
-/* =========================================
    MOBILE
    ========================================= */
 @media (max-width: 767px) {
@@ -228,21 +194,17 @@
     }
 
 
-    .cc-hero-content {
-        position: relative;
-
-        top: auto;
-        left: auto;
-
-        transform: none;
-
+.cc-hero-content {
         order: 2;
+
+        position: relative;
 
         width: 100%;
 
         text-align: center;
-    }
 
+        transform: translateY(-7vh);
+    }
 
     .cc-hero-title {
         font-size: clamp(
