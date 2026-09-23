@@ -380,7 +380,6 @@
 .cc-navbar-mobile {
     display: none;
 
-    border-top: 1px solid var(--cc-navbar-border);
 }
 
 
@@ -459,8 +458,8 @@
     background-size: 512px;
     background-position: center;
     background-repeat: repeat;
-    margin: 0;
-    padding: 0 0 0.5rem 1rem;
+padding: 0 0 0.5rem calc(var(--cc-navbar-padding-x) * 1.5);
+  margin: 0 anchor-size(calc(var(--cc-navbar-padding-x) * -1));
 }
 
 
