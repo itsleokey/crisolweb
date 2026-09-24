@@ -4,12 +4,18 @@
   /* =========================
      COLORES
   ========================= */
+  
+  --cc-bg-dark: #331C3D;
+  --cc-bg-light: #FBF2FF;
 
-  --cc-bg: #27172D;
-  --cc-accent: #E79DE4;
-  --cc-text: #EDEDED;
-  --cc-muted: #BAA3C9;
-  --cc-dropdown: #4D3456;
+  --cc-accent-dark: #B56AB2;
+  --cc-accent-light: #684378;
+
+  --cc-text-dark: #4B3654;
+  --cc-text-light: #EDEDED;
+
+  --cc-muted-dark: #946DA3;
+  --cc-muted-light: #C7A9C5;
 
 
   /* =========================
