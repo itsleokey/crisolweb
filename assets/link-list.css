@@ -15,20 +15,20 @@
 
 .cc-link-list--light {
   --link-list-border: rgba(75, 54, 84, 0.2);
-  --link-list-number: var(--cc-accent-light);
-  --link-list-title: var(--cc-text-dark);
-  --link-list-description: var(--cc-muted-dark);
-  --link-list-arrow: var(--cc-accent-light);
-  --link-list-hover: var(--cc-accent-light);
-}
-
-.cc-link-list--dark {
-  --link-list-border: rgba(199, 169, 197, 0.2);
   --link-list-number: var(--cc-accent-dark);
   --link-list-title: var(--cc-text-light);
   --link-list-description: var(--cc-muted-light);
   --link-list-arrow: var(--cc-accent-dark);
   --link-list-hover: var(--cc-accent-dark);
+}
+
+.cc-link-list--dark {
+  --link-list-border: rgba(199, 169, 197, 0.2);
+  --link-list-number: var(--cc-accent-light);
+  --link-list-title: var(--cc-text-dark);
+  --link-list-description: var(--cc-muted-dark);
+  --link-list-arrow: var(--cc-accent-light);
+  --link-list-hover: var(--cc-accent-light);  
 }
 
 
