@@ -1,0 +1,26 @@
+:root {
+  /* =========================
+     COLORES
+  ========================= */
+
+  --cc-bg: #27172D;
+  --cc-accent: #E79DE4;
+  --cc-text: #EDEDED;
+  --cc-muted: #BAA3C9;
+  --cc-dropdown: #4D3456;
+
+
+  /* =========================
+     TIPOGRAFÍA
+  ========================= */
+
+  --cc-font-display: "Calistoga", serif;
+  --cc-font-body: "Source Sans 3", sans-serif;
+
+
+  /* =========================
+     TRANSICIONES
+  ========================= */
+
+  --cc-transition: 180ms ease;
+}
