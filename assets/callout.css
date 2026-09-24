@@ -4,20 +4,14 @@
 
 .cc-callout {
   position: relative;
-
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
-
   width: 90%;
   margin: 0 auto;
-
   box-sizing: border-box;
-
   padding: 1.25rem 1.5rem;
-
   color: var(--cc-dropdown);
-
   background: #E2D3E7;
 }
 
@@ -28,14 +22,11 @@
 
 .cc-callout::before {
   content: "";
-
   position: absolute;
   top: 0;
   left: 0;
-
   width: 6px;
   height: 100%;
-
   background: var(--cc-dropdown);
 }
 
@@ -46,15 +37,10 @@
 
 .cc-callout-icon {
   flex-shrink: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin-top: 0.15rem;
-
   font-size: 1.5rem;
-
   color: var(--cc-dropdown);
 }
 
@@ -66,21 +52,19 @@
 .cc-callout-content {
   flex: 1;
   min-width: 0;
+  margin-top: 0.15rem;
 }
 
 .cc-callout-title {
   margin: 0 0 0.75rem;
-
   font-family: var(--cc-font-body);
   font-size: 1.15rem;
   font-weight: 700;
-
-  color: var(--cc-text);
+  color: var(--cc-dropdown);
 }
 
 .cc-callout-text {
   margin: 0 0 0.75rem;
-
   font-family: var(--cc-font-body);
   font-size: 1rem;
   line-height: 1.25;
@@ -89,36 +73,6 @@
 .cc-callout-text:last-of-type {
   margin-bottom: 0;
 }
-
-
-/* =========================================================
-   LINK
-========================================================= */
-
-.cc-callout-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  color: var(--cc-accent);
-
-  font-family: var(--cc-font-body);
-  font-size: 0.95rem;
-  font-weight: 600;
-
-  text-decoration: none;
-
-  transition:
-    color var(--cc-transition),
-    gap var(--cc-transition);
-}
-
-.cc-callout-link:hover,
-.cc-callout-link:focus-visible {
-  color: var(--cc-text);
-  gap: 0.7rem;
-}
-
 
 /* =========================================================
    MOBILE
