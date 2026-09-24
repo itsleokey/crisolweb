@@ -1,465 +1,508 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Crisol Crowling</title>
+```
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Crisol Crowling</title>
 
 
-    <link rel="stylesheet" href="global.css">
-    <link rel="stylesheet" href="navbar/navbar.css">
-    <link rel="stylesheet" href="hero/hero.css">
+<!-- =========================================
+     STYLES
+     ========================================= -->
+
+<link rel="stylesheet" href="global.css">
+<link rel="stylesheet" href="navbar/navbar.css">
+<link rel="stylesheet" href="hero/hero.css">
+```
 
 </head>
 
-
 <body>
 
-  <header class="cc-navbar">
-    <div class="cc-navbar-inner">
+```
+<!-- =========================================
+     NAVBAR
+     ========================================= -->
 
-      <!-- Logo / Brand -->
-      <a href="#" class="cc-navbar-brand" aria-label="Crisol Crowling - Inicio">
-        <span class="cc-navbar-name">Crisol Crowling</span>
-      </a>
+<div class="cc-navbar-embed">
 
-      <!-- Desktop navigation -->
-      <nav class="cc-navbar-desktop" aria-label="Navegación principal">
+    <header class="cc-navbar">
 
-        <a href="#about" class="cc-navbar-link">
-          Sobre mí
-        </a>
+        <div class="cc-navbar-inner">
 
-        <a href="#art" class="cc-navbar-link">
-          Portfolio
-        </a>
 
-        <!-- Commissions dropdown -->
-        <div class="cc-navbar-dropdown">
-          <button
-            class="cc-navbar-link cc-navbar-dropdown-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="desktop-commissions-menu"
-          >
-            Comisiones
-            <span class="cc-navbar-chevron" aria-hidden="true"></span>
-          </button>
+            <!-- Logo / Brand -->
 
-          <div
-            id="desktop-commissions-menu"
-            class="cc-navbar-dropdown-menu"
-          >
-            <a href="#commissions">Introducción</a>
-            <a href="#guide">Guía paso a paso</a>
-            <a href="#prices">Lista de precios</a>
-            <a href="#licenses">Licencias de uso</a>
-            <a href="#terms">Tçerminos de servicio</a>
-            <a href="form">Formulario de solicitud</a>
-          </div>
+            <a
+                href="#"
+                class="cc-navbar-brand"
+                aria-label="Crisol Crowling - Inicio"
+            >
+
+                <span class="cc-navbar-name">
+                    Crisol Crowling
+                </span>
+
+            </a>
+
+
+            <!-- Desktop navigation -->
+
+            <nav
+                class="cc-navbar-desktop"
+                aria-label="Navegación principal"
+            >
+
+
+                <a
+                    href="#about"
+                    class="cc-navbar-link"
+                >
+                    Sobre mí
+                </a>
+
+
+                <a
+                    href="#art"
+                    class="cc-navbar-link"
+                >
+                    Portfolio
+                </a>
+
+
+                <!-- Commissions dropdown -->
+
+                <div class="cc-navbar-dropdown">
+
+                    <button
+                        class="cc-navbar-link cc-navbar-dropdown-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="desktop-commissions-menu"
+                    >
+
+                        Comisiones
+
+                        <span
+                            class="cc-navbar-chevron"
+                            aria-hidden="true"
+                        ></span>
+
+                    </button>
+
+
+                    <div
+                        id="desktop-commissions-menu"
+                        class="cc-navbar-dropdown-menu"
+                    >
+
+                        <a href="#commissions">
+                            Introducción
+                        </a>
+
+                        <a href="#guide">
+                            Guía paso a paso
+                        </a>
+
+                        <a href="#prices">
+                            Lista de precios
+                        </a>
+
+                        <a href="#licenses">
+                            Licencias de uso
+                        </a>
+
+                        <a href="#terms">
+                            Términos de servicio
+                        </a>
+
+                        <a href="form">
+                            Formulario de solicitud
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="#contact"
+                    class="cc-navbar-link"
+                >
+                    Contacto
+                </a>
+
+
+            </nav>
+
+
+            <!-- Mobile menu button -->
+
+            <button
+                class="cc-navbar-menu-button"
+                type="button"
+                aria-label="Abrir menú"
+                aria-expanded="false"
+                aria-controls="cc-mobile-menu"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
         </div>
 
-        <a href="#contact" class="cc-navbar-link">
-          Contacto
-        </a>
 
-      </nav>
+        <!-- Mobile navigation -->
 
-      <!-- Mobile menu button -->
-      <button
-        class="cc-navbar-menu-button"
-        type="button"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-        aria-controls="cc-mobile-menu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+        <nav
+            id="cc-mobile-menu"
+            class="cc-navbar-mobile"
+            aria-label="Navegación móvil"
+            aria-hidden="true"
+        >
 
-    </div>
+            <div class="cc-mobile-menu-inner">
 
-    <!-- Mobile navigation -->
-    <nav
-      id="cc-mobile-menu"
-      class="cc-navbar-mobile"
-      aria-label="Navegación móvil"
-      aria-hidden="true"
-    >
 
-      <div class="cc-mobile-menu-inner">
+                <a
+                    href="#about"
+                    class="cc-mobile-link"
+                >
+                    Sobre mí
+                </a>
 
-        <a href="#about" class="cc-mobile-link">
-          Sobre mí
-        </a>
 
-        <a href="#art" class="cc-mobile-link">
-          Portfolio
-        </a>
+                <a
+                    href="#art"
+                    class="cc-mobile-link"
+                >
+                    Portfolio
+                </a>
 
-        <!-- Mobile commissions -->
-        <div class="cc-mobile-dropdown">
 
-          <button
-            class="cc-mobile-link cc-mobile-dropdown-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="mobile-commissions-menu"
-          >
-            <span>Comisiones</span>
-            <span class="cc-navbar-chevron" aria-hidden="true"></span>
-          </button>
+                <!-- Mobile commissions -->
 
-          <div
-            id="mobile-commissions-menu"
-            class="cc-mobile-dropdown-menu"
-          >
-            <a href="#commissions">Introducción</a>
-            <a href="#guide">Guía paso a paso</a>
-            <a href="#prices">Lista de precios</a>
-            <a href="#licenses">Licencias de uso</a>
-            <a href="#terms">Tçerminos de servicio</a>
-            <a href="form">Formulario de solicitud</a>
-          </div>
+                <div class="cc-mobile-dropdown">
 
-        </div>
+                    <button
+                        class="cc-mobile-link cc-mobile-dropdown-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="mobile-commissions-menu"
+                    >
 
-        <a href="#contact" class="cc-mobile-link">
-          Contacto
-        </a>
+                        <span>
+                            Comisiones
+                        </span>
 
-      </div>
+                        <span
+                            class="cc-navbar-chevron"
+                            aria-hidden="true"
+                        ></span>
 
-    </nav>
+                    </button>
 
-  </header>
 
+                    <div
+                        id="mobile-commissions-menu"
+                        class="cc-mobile-dropdown-menu"
+                    >
+
+                        <a href="#commissions">
+                            Introducción
+                        </a>
+
+                        <a href="#guide">
+                            Guía paso a paso
+                        </a>
+
+                        <a href="#prices">
+                            Lista de precios
+                        </a>
+
+                        <a href="#licenses">
+                            Licencias de uso
+                        </a>
+
+                        <a href="#terms">
+                            Términos de servicio
+                        </a>
+
+                        <a href="form">
+                            Formulario de solicitud
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="#contact"
+                    class="cc-mobile-link"
+                >
+                    Contacto
+                </a>
+
+
+            </div>
+
+        </nav>
+
+
+    </header>
+
+</div>
+
+
+
+<!-- =========================================
+     MAIN
+     ========================================= -->
+
+<main id="inicio">
 
 
     <!-- =========================================
          HERO
          ========================================= -->
 
-    <main id="inicio">
+    <section class="cc-hero">
+
+        <div class="cc-hero-inner">
 
 
-        <section class="cc-hero">
+            <!-- HERO TEXT -->
 
-            <div class="cc-hero-inner">
+            <div class="cc-hero-content">
 
+                <h1 class="cc-hero-title">
 
-                <!-- HERO TEXT -->
+                    CRISOL<br>
+                    CROWLING
 
-                <div class="cc-hero-content">
-
-                    <h1 class="cc-hero-title">
-
-                        CRISOL<br>
-                        CROWLING
-
-                    </h1>
+                </h1>
 
 
-                    <p class="cc-hero-subtitle">
-                        Ilustradora digital
-                    </p>
+                <p class="cc-hero-subtitle">
+                    Ilustradora digital
+                </p>
 
-                </div>
+            </div>
 
 
-                <!-- HERO BOOK -->
+            <!-- HERO BOOK -->
 
-                <div class="cc-hero-book">
+            <div class="cc-hero-book">
 
-                    <div class="cc-hero-book-placeholder">
+                <div class="cc-hero-book-placeholder">
 
-                        BOOK / ILLUSTRATION
-
-                    </div>
+                    BOOK / ILLUSTRATION
 
                 </div>
 
             </div>
 
-        </section>
 
+        </div>
 
-
-        <!-- =========================================
-             PAGE SKELETON
-             ========================================= -->
-
-        <section
-            id="portfolio"
-            class="cc-section cc-section-dark"
-        >
-
-            <div class="cc-section-inner">
-
-                <p class="cc-section-label">
-                    PORTFOLIO
-                </p>
-
-                <h2>
-                    Portfolio
-                </h2>
-
-                <p>
-                    Próximamente.
-                </p>
-
-            </div>
-
-        </section>
-
-
-
-        <section
-            id="introduccion"
-            class="cc-section"
-        >
-
-            <div class="cc-section-inner">
-
-                <p class="cc-section-label">
-                    COMISIONES
-                </p>
-
-                <h2>
-                    Introducción
-                </h2>
-
-                <p>
-                    Próximamente.
-                </p>
-
-            </div>
-
-        </section>
-
-
-
-        <section
-            id="guia"
-            class="cc-section cc-section-dark"
-        >
-
-            <div class="cc-section-inner">
-
-                <h2>
-                    Guía paso a paso
-                </h2>
-
-            </div>
-
-        </section>
-
-
-
-        <section
-            id="precios"
-            class="cc-section"
-        >
-
-            <div class="cc-section-inner">
-
-                <h2>
-                    Lista de precios
-                </h2>
-
-            </div>
-
-        </section>
-
-
-
-        <section
-            id="licencias"
-            class="cc-section cc-section-dark"
-        >
-
-            <div class="cc-section-inner">
-
-                <h2>
-                    Licencias de uso
-                </h2>
-
-            </div>
-
-        </section>
-
-
-
-        <section
-            id="terminos"
-            class="cc-section"
-        >
-
-            <div class="cc-section-inner">
-
-                <h2>
-                    Términos de servicio
-                </h2>
-
-            </div>
-
-        </section>
-
-
-
-        <section
-            id="formulario"
-            class="cc-section cc-section-dark"
-        >
-
-            <div class="cc-section-inner">
-
-                <h2>
-                    Formulario de solicitud
-                </h2>
-
-            </div>
-
-        </section>
-
-
-
-        <section
-            id="tienda"
-            class="cc-section"
-        >
-
-            <div class="cc-section-inner">
-
-                <h2>
-                    Tienda
-                </h2>
-
-            </div>
-
-        </section>
-
-
-
-        <section
-            id="quien-soy"
-            class="cc-section cc-section-dark"
-        >
-
-            <div class="cc-section-inner">
-
-                <h2>
-                    Quién soy
-                </h2>
-
-            </div>
-
-        </section>
-
-    </main>
+    </section>
 
 
 
     <!-- =========================================
-         SKELETON CSS
+         PAGE SKELETON
          ========================================= -->
 
-    <style>
 
-        html {
-            scroll-behavior: smooth;
-        }
+    <section
+        id="portfolio"
+        class="cc-section cc-section-dark"
+    >
 
+        <div class="cc-section-inner">
 
-        body {
-            margin: 0;
-            background-color: #FBF2FF;
-  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cfilter%20id%3D%22noise%22%3E%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.875%22%20result%3D%22noise%22%20%2F%3E%20%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220.98046875%200%200%200%200%200%200.9453125%200%200%200%200%200%200.99609375%200%200%200%200%200%200.27734375%200%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20filter%3D%22url%28%23noise%29%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22transparent%22%20opacity%3D%221%22%20%2F%3E%3C%2Fsvg%3E');
-  background-size: 512px;
-  background-position: center;
-  background-repeat: repeat;
-        }
+            <p class="cc-section-label">
+                PORTFOLIO
+            </p>
 
+            <h2>
+                Portfolio
+            </h2>
 
-        .cc-section {
-            min-height: 60vh;
+            <p>
+                Próximamente.
+            </p>
 
-            padding:
-                6rem
-                2rem;
+        </div>
 
-            box-sizing: border-box;
-
-            display: flex;
-            align-items: center;
-        }
-
-
-        .cc-section-dark {
-            background: #27172D;
-            color: #EDEDED;
-        }
-
-
-        .cc-section-inner {
-            width: min(
-                100%,
-                1100px
-            );
-
-            margin: 0 auto;
-        }
-
-
-        .cc-section h2 {
-            font-family: 'Calistoga', serif;
-
-            font-size: clamp(
-                2.5rem,
-                6vw,
-                5rem
-            );
-
-            font-weight: 400;
-
-            margin:
-                0
-                0
-                1rem;
-        }
-
-
-        .cc-section p {
-            font-family: 'Open Sans', sans-serif;
-        }
-
-
-        .cc-section-label {
-            font-family: 'Open Sans', sans-serif;
-
-            font-size: 0.8rem;
-
-            font-weight: 700;
-
-            letter-spacing: 0.15em;
-
-            color: #E79DE4;
-        }
-
-    </style>
+    </section>
 
 
 
-    <!-- =========================================
-         JAVASCRIPT
-         ========================================= -->
+    <section
+        id="introduccion"
+        class="cc-section"
+    >
 
-    <script src="navbar/navbar.js"></script>
-    <script src="hero/hero.js"></script>
+        <div class="cc-section-inner">
 
+            <p class="cc-section-label">
+                COMISIONES
+            </p>
+
+            <h2>
+                Introducción
+            </h2>
+
+            <p>
+                Próximamente.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <section
+        id="guia"
+        class="cc-section cc-section-dark"
+    >
+
+        <div class="cc-section-inner">
+
+            <h2>
+                Guía paso a paso
+            </h2>
+
+        </div>
+
+    </section>
+
+
+
+    <section
+        id="precios"
+        class="cc-section"
+    >
+
+        <div class="cc-section-inner">
+
+            <h2>
+                Lista de precios
+            </h2>
+
+        </div>
+
+    </section>
+
+
+
+    <section
+        id="licencias"
+        class="cc-section cc-section-dark"
+    >
+
+        <div class="cc-section-inner">
+
+            <h2>
+                Licencias de uso
+            </h2>
+
+        </div>
+
+    </section>
+
+
+
+    <section
+        id="terminos"
+        class="cc-section"
+    >
+
+        <div class="cc-section-inner">
+
+            <h2>
+                Términos de servicio
+            </h2>
+
+        </div>
+
+    </section>
+
+
+
+    <section
+        id="formulario"
+        class="cc-section cc-section-dark"
+    >
+
+        <div class="cc-section-inner">
+
+            <h2>
+                Formulario de solicitud
+            </h2>
+
+        </div>
+
+    </section>
+
+
+
+    <section
+        id="tienda"
+        class="cc-section"
+    >
+
+        <div class="cc-section-inner">
+
+            <h2>
+                Tienda
+            </h2>
+
+        </div>
+
+    </section>
+
+
+
+    <section
+        id="quien-soy"
+        class="cc-section cc-section-dark"
+    >
+
+        <div class="cc-section-inner">
+
+            <h2>
+                Quién soy
+            </h2>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+     ========================================= -->
+
+<script src="navbar/navbar.js"></script>
+<script src="hero/hero.js"></script>
+```
 
 </body>
 
