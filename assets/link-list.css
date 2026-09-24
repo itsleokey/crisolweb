@@ -1,0 +1,123 @@
+/* =========================================================
+   LINK LIST
+========================================================= */
+
+.cc-link-list {
+  width: 100%;
+  max-width: 700px;
+  margin: 3rem auto;
+}
+
+
+/* =========================================================
+   ITEM
+========================================================= */
+
+.cc-link-list-item {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+
+  padding: 1.25rem 0;
+
+  color: var(--cc-text);
+  text-decoration: none;
+
+  border-top: 1px solid rgba(186, 163, 201, 0.2);
+
+  transition:
+    color var(--cc-transition),
+    padding var(--cc-transition);
+}
+
+.cc-link-list-item:last-child {
+  border-bottom: 1px solid rgba(186, 163, 201, 0.2);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.cc-link-list-number {
+  font-family: var(--cc-font-display);
+  font-size: 3rem;
+  color: var(--cc-accent);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.cc-link-list-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.cc-link-list-title {
+  font-family: var(--cc-font-body);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--cc-dropdown);
+}
+
+.cc-link-list-description {
+  font-family: var(--cc-font-body);
+  font-size: 1rem;
+  color: var(--cc-muted);
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.cc-link-list-arrow {
+  font-family: var(--cc-font-body);
+  font-size: 1.2rem;
+  color: var(--cc-accent);
+
+  transition:
+    transform var(--cc-transition);
+}
+
+
+/* =========================================================
+   HOVER / FOCUS
+========================================================= */
+
+.cc-link-list-item:hover,
+.cc-link-list-item:focus-visible {
+  color: var(--cc-accent);
+  padding-left: 0.5rem;
+}
+
+.cc-link-list-item:hover .cc-link-list-arrow,
+.cc-link-list-item:focus-visible .cc-link-list-arrow {
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 736px) {
+
+  .cc-link-list {
+    margin: 2rem auto;
+  }
+
+  .cc-link-list-item {
+    grid-template-columns: auto 1fr auto;
+    gap: 1.25rem;
+    padding: 1rem 0;
+  }
+
+}
