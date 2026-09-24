@@ -1,62 +1,37 @@
 /* =========================================================
-   CRISOL CROWLING — NAVBAR
-   ========================================================= */
+   NAVBAR VARIABLES
+========================================================= */
 
 :root {
-  --cc-bg: #27172D;
-  --cc-accent: #E79DE4;
-  --cc-text: #EDEDED;
-  --cc-muted: #BAA3C9;
-  --cc-dropdown: #4D3456;
-  --cc-navbar-height: 72px;
-  --cc-navbar-padding: 1.5rem;
-  --cc-transition: 180ms ease;
-}
-
-
-/* =========================================================
-   RESET / BASE
-   ========================================================= */
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  background: var(--cc-bg);
-  color: var(--cc-text);
-  font-family: "Source Sans 3", sans-serif;
-}
-
-button,
-a {
-  font: inherit;
+  --cc-navbar-height: 82px;
+  --cc-navbar-padding: 2.5rem;
 }
 
 
 /* =========================================================
    NAVBAR
-   ========================================================= */
+========================================================= */
+
+.cc-navbar-embed {
+  height: var(--cc-navbar-height);
+}
 
 .cc-navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  left: 0;
   width: 100%;
-  background: var(--cc-bg);
+  z-index: 1000;
 }
 
 .cc-navbar-inner {
   width: 100%;
-  max-width: 1400px;
+  max-width: 60rem;
+  background: var(--cc-bg);
   min-height: var(--cc-navbar-height);
   margin: 0 auto;
   padding: 0 var(--cc-navbar-padding);
+  text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -65,7 +40,7 @@ a {
 
 /* =========================================================
    BRAND
-   ========================================================= */
+========================================================= */
 
 .cc-navbar-brand {
   display: inline-flex;
@@ -76,21 +51,20 @@ a {
 }
 
 .cc-navbar-name {
-  font-family: "Calistoga", serif;
-  font-size: 1.4rem;
+  font-family: var(--cc-font-display);
+  font-size: 1.8rem;
   line-height: 1;
-  text-transform: uppercase;
 }
 
 
 /* =========================================================
    DESKTOP NAVIGATION
-   ========================================================= */
+========================================================= */
 
 .cc-navbar-desktop {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 0.75rem;
 }
 
 .cc-navbar-link {
@@ -98,38 +72,30 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.4rem 0;
+  padding: 0.4rem 1rem;
   border: 0;
   background: none;
   color: var(--cc-text);
   text-decoration: none;
+  font-family: var(--cc-font-body);
   font-size: 1rem;
-  font-weight: 400;
-  text-transform: uppercase;
+  font-weight: 600;
   cursor: pointer;
   transition:
     color var(--cc-transition),
     opacity var(--cc-transition);
+  text-transform: uppercase;
 }
 
 .cc-navbar-link:hover,
 .cc-navbar-link:focus-visible {
   color: var(--cc-accent);
-  font-weight: 600;
-}
-
-.cc-navbar-link:focus-visible,
-.cc-navbar-dropdown-toggle:focus-visible,
-.cc-mobile-link:focus-visible,
-.cc-navbar-menu-button:focus-visible {
-  outline: 2px solid var(--cc-accent);
-  outline-offset: 4px;
 }
 
 
 /* =========================================================
    CHEVRON
-   ========================================================= */
+========================================================= */
 
 .cc-navbar-chevron {
   width: 7px;
@@ -137,7 +103,6 @@ a {
   border-right: 1.5px solid currentColor;
   border-bottom: 1.5px solid currentColor;
   transform: rotate(45deg);
-  transform-origin: center;
   transition: transform var(--cc-transition);
 }
 
@@ -149,7 +114,7 @@ a {
 
 /* =========================================================
    DESKTOP DROPDOWN
-   ========================================================= */
+========================================================= */
 
 .cc-navbar-dropdown {
   position: relative;
@@ -158,14 +123,13 @@ a {
 .cc-navbar-dropdown-menu {
   position: absolute;
   top: calc(100% + 0.75rem);
-  right: 0;
+  left: 50%;
+  font-size: 0.8rem;
+  transform: translate(-50%, -6px);
   min-width: 170px;
-  padding: 0.45rem;
   background: var(--cc-dropdown);
-  border-radius: 10px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-6px);
   transition:
     opacity var(--cc-transition),
     transform var(--cc-transition),
@@ -175,18 +139,20 @@ a {
 .cc-navbar-dropdown-menu.is-open {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translate(-50%, 0);
 }
 
 .cc-navbar-dropdown-menu a {
   display: block;
   padding: 0.65rem 0.75rem;
-  border-radius: 7px;
   color: var(--cc-text);
   text-decoration: none;
+  font-family: var(--cc-font-body);
   transition:
     color var(--cc-transition),
     background var(--cc-transition);
+  font-size: 0.8rem;
+  text-transform: uppercase;
 }
 
 .cc-navbar-dropdown-menu a:hover,
@@ -198,7 +164,7 @@ a {
 
 /* =========================================================
    MOBILE BUTTON
-   ========================================================= */
+========================================================= */
 
 .cc-navbar-menu-button {
   display: none;
@@ -222,7 +188,7 @@ a {
 }
 
 
-/* Burger → X */
+/* Hamburger → X */
 
 .cc-navbar-menu-button.is-open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
@@ -239,7 +205,7 @@ a {
 
 /* =========================================================
    MOBILE MENU
-   ========================================================= */
+========================================================= */
 
 .cc-navbar-mobile {
   display: none;
@@ -247,36 +213,18 @@ a {
 
 
 /* =========================================================
-   DEMO CONTENT
-   ========================================================= */
-
-.cc-demo-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 5rem 1.5rem;
-}
-
-.cc-demo-content section {
-  min-height: 70vh;
-  padding: 4rem 0;
-}
-
-.cc-demo-content h1,
-.cc-demo-content h2 {
-  font-family: "Calistoga", serif;
-  color: var(--cc-accent);
-}
-
-
-/* =========================================================
    MOBILE
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 768px) {
 
   :root {
     --cc-navbar-height: 64px;
     --cc-navbar-padding: 1rem;
+  }
+
+  .cc-navbar-embed {
+    height: var(--cc-navbar-height);
   }
 
   .cc-navbar-desktop {
@@ -312,6 +260,7 @@ a {
 
   .cc-mobile-link {
     width: 100%;
+    text-transform: uppercase;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -321,8 +270,9 @@ a {
     background: transparent;
     color: var(--cc-text);
     text-decoration: none;
+    font-family: var(--cc-font-body);
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 600;
     text-align: left;
     cursor: pointer;
     transition: color var(--cc-transition);
@@ -333,30 +283,34 @@ a {
     color: var(--cc-accent);
   }
 
-.cc-mobile-dropdown-menu {
-  max-height: 0;
-  overflow: hidden;
 
-  transition:
-    max-height 220ms ease,
-    opacity 180ms ease;
-  opacity: 0;
-}
+  /* Mobile commissions dropdown */
 
-.cc-mobile-dropdown-menu.is-open {
-  max-height: 300px;
-  opacity: 1;
-}
-   
+  .cc-mobile-dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+      max-height 220ms ease,
+      opacity 180ms ease;
+  }
+
+  .cc-mobile-dropdown-menu.is-open {
+    max-height: 300px;
+    opacity: 1;
+  }
+
   .cc-mobile-dropdown-menu a {
-  display: block;
-  padding: 0.7rem 0 0.7rem 1rem;
-  color: var(--cc-muted);
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color var(--cc-transition);
-}
-   
+    display: block;
+    padding: 0.7rem 0 0.7rem 1rem;
+    color: var(--cc-muted);
+    text-decoration: none;
+    font-family: var(--cc-font-body);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transition: color var(--cc-transition);
+  }
+
   .cc-mobile-dropdown-menu a:hover,
   .cc-mobile-dropdown-menu a:focus-visible {
     color: var(--cc-accent);
@@ -366,7 +320,7 @@ a {
 
 /* =========================================================
    VERY SMALL SCREENS
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 380px) {
 
