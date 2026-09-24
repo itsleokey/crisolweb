@@ -1,0 +1,156 @@
+/* =========================================================
+   CALLOUT
+========================================================= */
+
+.cc-callout {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+
+  width: 100%;
+  max-width: 700px;
+
+  box-sizing: border-box;
+
+  padding: 1.75rem 2rem;
+
+  color: var(--cc-text);
+
+  background: var(--cc-dropdown);
+
+  border: 1px solid rgba(186, 163, 201, 0.18);
+}
+
+
+/* =========================================================
+   ACCENT BAR
+========================================================= */
+
+.cc-callout::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 4px;
+  height: 100%;
+
+  background: var(--cc-accent);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.cc-callout-icon {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2rem;
+  height: 2rem;
+
+  margin-top: 0.15rem;
+
+  font-family: var(--cc-font-display);
+  font-size: 1.2rem;
+
+  color: var(--cc-accent);
+
+  border: 1px solid rgba(231, 157, 228, 0.45);
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.cc-callout-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.cc-callout-title {
+  margin: 0 0 0.75rem;
+
+  font-family: var(--cc-font-body);
+  font-size: 1.15rem;
+  font-weight: 700;
+
+  color: var(--cc-text);
+}
+
+.cc-callout-text {
+  margin: 0 0 0.75rem;
+
+  font-family: var(--cc-font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+
+  color: var(--cc-muted);
+}
+
+.cc-callout-text:last-of-type {
+  margin-bottom: 1.25rem;
+}
+
+
+/* =========================================================
+   LINK
+========================================================= */
+
+.cc-callout-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  color: var(--cc-accent);
+
+  font-family: var(--cc-font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    color var(--cc-transition),
+    gap var(--cc-transition);
+}
+
+.cc-callout-link:hover,
+.cc-callout-link:focus-visible {
+  color: var(--cc-text);
+  gap: 0.7rem;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 736px) {
+
+  .cc-callout {
+    gap: 1rem;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .cc-callout-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+
+    font-size: 1rem;
+  }
+
+  .cc-callout-title {
+    font-size: 1.05rem;
+  }
+
+}
