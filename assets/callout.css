@@ -9,18 +9,16 @@
   align-items: flex-start;
   gap: 1.5rem;
 
-  width: 100%;
-  max-width: 700px;
+  width: 90%;
+  margin: 0 auto;
 
   box-sizing: border-box;
 
-  padding: 1.75rem 2rem;
+  padding: 1.25rem 1.5rem;
 
-  color: var(--cc-text);
+  color: var(--cc-dropdown);
 
-  background: var(--cc-dropdown);
-
-  border: 1px solid rgba(186, 163, 201, 0.18);
+  background: #E2D3E7;
 }
 
 
@@ -35,10 +33,10 @@
   top: 0;
   left: 0;
 
-  width: 4px;
+  width: 6px;
   height: 100%;
 
-  background: var(--cc-accent);
+  background: var(--cc-dropdown);
 }
 
 
@@ -53,18 +51,11 @@
   align-items: center;
   justify-content: center;
 
-  width: 2rem;
-  height: 2rem;
-
   margin-top: 0.15rem;
 
-  font-family: var(--cc-font-display);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 
-  color: var(--cc-accent);
-
-  border: 1px solid rgba(231, 157, 228, 0.45);
-  border-radius: 50%;
+  color: var(--cc-dropdown);
 }
 
 
@@ -92,13 +83,11 @@
 
   font-family: var(--cc-font-body);
   font-size: 1rem;
-  line-height: 1.6;
-
-  color: var(--cc-muted);
+  line-height: 1.25;
 }
 
 .cc-callout-text:last-of-type {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0;
 }
 
 
@@ -143,10 +132,7 @@
   }
 
   .cc-callout-icon {
-    width: 1.75rem;
-    height: 1.75rem;
-
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 
   .cc-callout-title {
