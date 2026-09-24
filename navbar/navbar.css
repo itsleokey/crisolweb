@@ -5,6 +5,8 @@
 :root {
   --cc-navbar-height: 82px;
   --cc-navbar-padding: 2.5rem;
+  --cc-navbar-bg: #27172D;
+  --cc-navbar-dropdown: #4D3456;
 }
 
 
@@ -27,7 +29,7 @@
 .cc-navbar-inner {
   width: 100%;
   max-width: 60rem;
-  background: var(--cc-bg);
+  background: var(--cc-navbar-bg);
   min-height: var(--cc-navbar-height);
   margin: 0 auto;
   padding: 0 var(--cc-navbar-padding);
@@ -45,7 +47,7 @@
 .cc-navbar-brand {
   display: inline-flex;
   align-items: center;
-  color: var(--cc-accent);
+  color: var(--cc-accent-light);
   text-decoration: none;
   flex-shrink: 0;
 }
@@ -89,7 +91,7 @@
 
 .cc-navbar-link:hover,
 .cc-navbar-link:focus-visible {
-  color: var(--cc-accent);
+  color: var(--cc-accent-light);
 }
 
 
@@ -127,7 +129,7 @@
   font-size: 0.8rem;
   transform: translate(-50%, -6px);
   min-width: 170px;
-  background: var(--cc-dropdown);
+  background: var(--cc-navbar-dropdown);
   opacity: 0;
   visibility: hidden;
   transition:
@@ -145,7 +147,7 @@
 .cc-navbar-dropdown-menu a {
   display: block;
   padding: 0.65rem 0.75rem;
-  color: var(--cc-text);
+  color: var(--cc-text-light);
   text-decoration: none;
   font-family: var(--cc-font-body);
   transition:
@@ -157,7 +159,7 @@
 
 .cc-navbar-dropdown-menu a:hover,
 .cc-navbar-dropdown-menu a:focus-visible {
-  color: var(--cc-accent);
+  color: var(--cc-accent-light);
   background: rgba(231, 157, 228, 0.08);
 }
 
@@ -181,7 +183,7 @@
   width: 100%;
   height: 2px;
   margin: 5px 0;
-  background: var(--cc-text);
+  background: var(--cc-text-light);
   transition:
     transform var(--cc-transition),
     opacity var(--cc-transition);
@@ -242,7 +244,7 @@
     right: 0;
     width: min(85vw, 360px);
     height: calc(100dvh - var(--cc-navbar-height));
-    background: var(--cc-dropdown);
+    background: var(--cc-navbar-dropdown);
     overflow-y: auto;
     transform: translateX(100%);
     transition: transform 240ms ease;
@@ -268,7 +270,7 @@
     border: 0;
     border-bottom: 1px solid rgba(186, 163, 201, 0.15);
     background: transparent;
-    color: var(--cc-text);
+    color: var(--cc-text-light);
     text-decoration: none;
     font-family: var(--cc-font-body);
     font-size: 1.1rem;
@@ -280,7 +282,7 @@
 
   .cc-mobile-link:hover,
   .cc-mobile-link:focus-visible {
-    color: var(--cc-accent);
+    color: var(--cc-accent-light);
   }
 
 
@@ -303,7 +305,7 @@
   .cc-mobile-dropdown-menu a {
     display: block;
     padding: 0.7rem 0 0.7rem 1rem;
-    color: var(--cc-muted);
+    color: var(--cc-muted-light);
     text-decoration: none;
     font-family: var(--cc-font-body);
     font-size: 0.8rem;
@@ -313,7 +315,7 @@
 
   .cc-mobile-dropdown-menu a:hover,
   .cc-mobile-dropdown-menu a:focus-visible {
-    color: var(--cc-accent);
+    color: var(--cc-accent-light);
   }
 }
 
