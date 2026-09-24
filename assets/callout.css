@@ -11,7 +11,7 @@
   margin: 0 0.1rem;
   box-sizing: border-box;
   padding: 1.25rem 1.5rem;
-  color: var(--cc-dropdown);
+  color: var(--cc-text-dark);
   background: #E79DE421;
 }
 
@@ -27,7 +27,7 @@
   left: 0;
   width: 6px;
   height: 100%;
-  background: var(--cc-dropdown);
+  background: var(--cc-accent-dark);
 }
 
 
@@ -41,7 +41,7 @@
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  color: var(--cc-dropdown);
+  color: var(--cc-accent-dark);
 }
 
 
@@ -60,7 +60,7 @@
   font-family: var(--cc-font-body);
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--cc-dropdown);
+  color: var(--cc-accent-dark);
 }
 
 .cc-callout-text {
