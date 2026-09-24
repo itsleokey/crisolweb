@@ -77,7 +77,7 @@
   padding: 0.4rem 1rem;
   border: 0;
   background: none;
-  color: var(--cc-text);
+  color: var(--cc-text-light);
   text-decoration: none;
   font-family: var(--cc-font-body);
   font-size: 1rem;
@@ -159,7 +159,6 @@
 
 .cc-navbar-dropdown-menu a:hover,
 .cc-navbar-dropdown-menu a:focus-visible {
-  color: var(--cc-accent-light);
   background: rgba(231, 157, 228, 0.08);
 }
 
@@ -212,7 +211,6 @@
 .cc-navbar-mobile {
   display: none;
 }
-
 
 /* =========================================================
    MOBILE
@@ -273,7 +271,7 @@
     color: var(--cc-text-light);
     text-decoration: none;
     font-family: var(--cc-font-body);
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     text-align: left;
     cursor: pointer;
@@ -308,14 +306,14 @@
     color: var(--cc-muted-light);
     text-decoration: none;
     font-family: var(--cc-font-body);
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-transform: uppercase;
     transition: color var(--cc-transition);
   }
 
   .cc-mobile-dropdown-menu a:hover,
   .cc-mobile-dropdown-menu a:focus-visible {
-    color: var(--cc-accent-light);
+    color: var(--cc-text-light);
   }
 }
 
