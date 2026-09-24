@@ -10,6 +10,29 @@
 
 
 /* =========================================================
+   COLOR VARIANTS
+========================================================= */
+
+.cc-link-list--light {
+  --link-list-border: rgba(75, 54, 84, 0.2);
+  --link-list-number: var(--cc-accent-light);
+  --link-list-title: var(--cc-text-dark);
+  --link-list-description: var(--cc-muted-dark);
+  --link-list-arrow: var(--cc-accent-light);
+  --link-list-hover: var(--cc-accent-light);
+}
+
+.cc-link-list--dark {
+  --link-list-border: rgba(199, 169, 197, 0.2);
+  --link-list-number: var(--cc-accent-dark);
+  --link-list-title: var(--cc-text-light);
+  --link-list-description: var(--cc-muted-light);
+  --link-list-arrow: var(--cc-accent-dark);
+  --link-list-hover: var(--cc-accent-dark);
+}
+
+
+/* =========================================================
    ITEM
 ========================================================= */
 
@@ -20,21 +43,17 @@
   grid-template-columns: auto 1fr auto;
   gap: 1.5rem;
   align-items: center;
-
   padding: 1.25rem 0;
-
-  color: var(--cc-text);
+  color: var(--link-list-title);
   text-decoration: none;
-
-  border-top: 1px solid rgba(186, 163, 201, 0.2);
-
+  border-top: 1px solid var(--link-list-border);
   transition:
     color var(--cc-transition),
     padding var(--cc-transition);
 }
 
 .cc-link-list-item:last-child {
-  border-bottom: 1px solid rgba(186, 163, 201, 0.2);
+  border-bottom: 1px solid var(--link-list-border);
 }
 
 
@@ -45,7 +64,9 @@
 .cc-link-list-number {
   font-family: var(--cc-font-display);
   font-size: 3rem;
-  color: var(--cc-accent);
+  color: var(--link-list-number);
+  transition:
+    color var(--cc-transition);
 }
 
 
@@ -59,18 +80,30 @@
   gap: 0.2rem;
 }
 
+
+/* =========================================================
+   TITLE
+========================================================= */
+
 .cc-link-list-title {
   font-family: var(--cc-font-body);
   font-size: 1.2rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--cc-dropdown);
+  color: var(--link-list-title);
+  transition:
+    color var(--cc-transition);
 }
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
 .cc-link-list-description {
   font-family: var(--cc-font-body);
   font-size: 1rem;
-  color: var(--cc-muted);
+  color: var(--link-list-description);
 }
 
 
@@ -81,25 +114,32 @@
 .cc-link-list-arrow {
   font-family: var(--cc-font-body);
   font-size: 1.2rem;
-  color: var(--cc-accent);
-
+  color: var(--link-list-arrow);
   transition:
+    color var(--cc-transition),
     transform var(--cc-transition);
 }
 
 
 /* =========================================================
-   HOVER / FOCUS
+   HOVER
 ========================================================= */
 
 .cc-link-list-item:hover,
 .cc-link-list-item:focus-visible {
-  color: var(--cc-accent);
   padding-left: 0.5rem;
+}
+
+.cc-link-list-item:hover .cc-link-list-number,
+.cc-link-list-item:hover .cc-link-list-title,
+.cc-link-list-item:focus-visible .cc-link-list-number,
+.cc-link-list-item:focus-visible .cc-link-list-title {
+  color: var(--link-list-hover);
 }
 
 .cc-link-list-item:hover .cc-link-list-arrow,
 .cc-link-list-item:focus-visible .cc-link-list-arrow {
+  color: var(--link-list-hover);
   transform: translate(3px, -3px);
 }
 
