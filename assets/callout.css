@@ -7,12 +7,12 @@
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0 0.1rem;
   box-sizing: border-box;
   padding: 1.25rem 1.5rem;
   color: var(--cc-dropdown);
-  background: #E2D3E7;
+  background: #E79DE421;
 }
 
 
