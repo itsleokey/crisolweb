@@ -1,50 +1,6 @@
-/* =========================================================
-   M2 · ÍNDICE DE LIBRO
-   Usa las variables de global.css (--cc-*). Pensado para ir
-   sobre --cc-bg-light, con --cc-text-dark como color de texto.
-========================================================= */
-
 .cc-guide-book {
-  max-width: 42rem;
-  margin: 2rem auto;
-  color: var(--cc-text-dark);
-}
-
-
-/* =========================================================
-   RESUMEN (banderines colgantes)
-========================================================= */
-
-.cc-gb-summary {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2.4rem;
-}
-
-.cc-gb-summary div {
-  width: 7.4rem;
-  padding: 1.1rem 0.6rem 2.4rem;
-  background: var(--cc-accent-dark);
   color: var(--cc-text-light);
-  text-align: center;
-  font-size: 0.72rem;
-  line-height: 1.2;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 88%, 0 100%);
 }
-
-.cc-gb-summary div:nth-child(2n) {
-  background: var(--cc-text-dark);
-}
-
-.cc-gb-summary b {
-  display: block;
-  font-family: var(--cc-font-display);
-  font-size: 1.5rem;
-  line-height: 1.1;
-  margin-bottom: 0.2rem;
-}
-
 
 /* =========================================================
    CAPÍTULO
@@ -56,26 +12,31 @@
 
 .cc-gb-chapter-title {
   font-family: var(--cc-font-display);
-  font-size: 2rem;
-  color: var(--cc-accent-dark);
-  border-bottom: 4px double rgba(140, 84, 138, 0.3);
+  color: var(--cc-accent-light);
+  border-bottom: 4px double rgba(140, 84, 138, 0.5);
   padding-bottom: 0.3rem;
   margin: 0 0 1rem;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  line-height: 1;
+  font-weight: 400;
 }
 
 .cc-gb-chapter-title small {
   display: block;
   font-family: var(--cc-font-body);
-  font-weight: 700;
   font-size: 0.7rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.12em;
+  color: var(--cc-muted-light);
   text-transform: uppercase;
-  color: var(--cc-muted-dark);
+  width: calc(100% + 0.025rem);
+  line-height: 1;
+  font-weight: 600;
 }
 
 
 /* =========================================================
-   ITEM (título + puntos guía + etiqueta)
+   ITEM 
 ========================================================= */
 
 .cc-gb-item {
@@ -88,6 +49,7 @@
   gap: 0.5rem;
   margin: 0;
   font-family: var(--cc-font-body);
+  color: var(--cc-muted-light);
 }
 
 .cc-gb-line b {
@@ -95,11 +57,10 @@
   font-weight: 700;
 }
 
-/* puntos guía: una línea punteada que rellena el hueco */
 .cc-gb-line::after {
   content: "";
   flex: 1;
-  border-bottom: 2px dotted rgba(140, 84, 138, 0.3);
+  border-bottom: 2px dotted rgba(140, 84, 138, 0.7);
   transform: translateY(-0.3em);
 }
 
@@ -114,7 +75,7 @@
 
 .cc-gb-text {
   margin: 0.3rem 0 0 1.5rem;
-  color: var(--cc-muted-dark);
+  color: var(--cc-text-light);
   font-size: 0.96rem;
 }
 
