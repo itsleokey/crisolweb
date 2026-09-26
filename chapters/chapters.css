@@ -1,0 +1,178 @@
+/* =========================================================
+   M2 · ÍNDICE DE LIBRO
+   Usa las variables de global.css (--cc-*). Pensado para ir
+   sobre --cc-bg-light, con --cc-text-dark como color de texto.
+========================================================= */
+
+.cc-guide-book {
+  max-width: 42rem;
+  margin: 2rem auto;
+  color: var(--cc-text-dark);
+}
+
+
+/* =========================================================
+   RESUMEN (banderines colgantes)
+========================================================= */
+
+.cc-gb-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.4rem;
+}
+
+.cc-gb-summary div {
+  width: 7.4rem;
+  padding: 1.1rem 0.6rem 2.4rem;
+  background: var(--cc-accent-dark);
+  color: var(--cc-text-light);
+  text-align: center;
+  font-size: 0.72rem;
+  line-height: 1.2;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 88%, 0 100%);
+}
+
+.cc-gb-summary div:nth-child(2n) {
+  background: var(--cc-text-dark);
+}
+
+.cc-gb-summary b {
+  display: block;
+  font-family: var(--cc-font-display);
+  font-size: 1.5rem;
+  line-height: 1.1;
+  margin-bottom: 0.2rem;
+}
+
+
+/* =========================================================
+   CAPÍTULO
+========================================================= */
+
+.cc-gb-chapter {
+  margin-bottom: 2rem;
+}
+
+.cc-gb-chapter-title {
+  font-family: var(--cc-font-display);
+  font-size: 2rem;
+  color: var(--cc-accent-dark);
+  border-bottom: 4px double rgba(140, 84, 138, 0.3);
+  padding-bottom: 0.3rem;
+  margin: 0 0 1rem;
+}
+
+.cc-gb-chapter-title small {
+  display: block;
+  font-family: var(--cc-font-body);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cc-muted-dark);
+}
+
+
+/* =========================================================
+   ITEM (título + puntos guía + etiqueta)
+========================================================= */
+
+.cc-gb-item {
+  margin-bottom: 1.1rem;
+}
+
+.cc-gb-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin: 0;
+  font-family: var(--cc-font-body);
+}
+
+.cc-gb-line b {
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+/* puntos guía: una línea punteada que rellena el hueco */
+.cc-gb-line::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px dotted rgba(140, 84, 138, 0.3);
+  transform: translateY(-0.3em);
+}
+
+.cc-gb-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--cc-accent-dark);
+  white-space: nowrap;
+}
+
+.cc-gb-text {
+  margin: 0.3rem 0 0 1.5rem;
+  color: var(--cc-muted-dark);
+  font-size: 0.96rem;
+}
+
+.cc-gb-sub {
+  margin: 0.3rem 0 0 1.5rem;
+  font-size: 0.92rem;
+  color: var(--cc-muted-dark);
+}
+
+.cc-gb-sub b {
+  color: var(--cc-text-dark);
+}
+
+.cc-gb-sub i {
+  color: var(--cc-accent-dark);
+  font-style: normal;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cc-gb-cta {
+  display: inline-block;
+  margin-top: 1rem;
+  background: var(--cc-accent-dark);
+  color: var(--cc-text-light);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.75rem 1.4rem;
+  transition: background var(--cc-transition);
+}
+
+.cc-gb-cta:hover,
+.cc-gb-cta:focus-visible {
+  background: var(--cc-accent-light);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 736px) {
+
+  .cc-gb-line {
+    flex-wrap: wrap;
+  }
+
+  .cc-gb-line::after {
+    display: none;
+  }
+
+  .cc-gb-text,
+  .cc-gb-sub {
+    margin-left: 0;
+  }
+
+}
