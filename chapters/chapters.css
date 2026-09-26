@@ -9,7 +9,7 @@
 .cc-gb-chapter-title {
   font-family: var(--cc-font-display);
   color: var(--cc-accent-light);
-  border-bottom: 4px double rgba(140, 84, 138, 0.5);
+  border-bottom: 4px double #A07B9F8F;
   padding-bottom: 0.3rem;
   margin: 0 0 1rem;
   text-transform: uppercase;
@@ -36,7 +36,7 @@
 ========================================================= */
 
 .cc-gb-item {
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.3rem;
 }
 
 .cc-gb-line {
@@ -46,11 +46,11 @@
   margin: 0;
   font-family: var(--cc-font-body);
   color: var(--cc-muted-light);
+  font-weight: 700;
 }
 
 .cc-gb-line b {
-  white-space: nowrap;
-  font-weight: 700;
+   color: var(--cc-accent-light);
 }
 
 .cc-gb-line::after {
