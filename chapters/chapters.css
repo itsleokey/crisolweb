@@ -1,13 +1,9 @@
-.cc-guide-book {
-  color: var(--cc-text-light);
-}
-
 /* =========================================================
    CAPÍTULO
 ========================================================= */
 
 .cc-gb-chapter {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .cc-gb-chapter-title {
@@ -69,14 +65,16 @@
   font-weight: 700;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: var(--cc-accent-dark);
+  color: var(--cc-muted-light);
   white-space: nowrap;
 }
 
 .cc-gb-text {
   margin: 0.3rem 0 0 1.5rem;
   color: var(--cc-text-light);
-  font-size: 0.96rem;
+  font-size: 1em;
+  line-height: 1.25;
+  font-weight: 400;
 }
 
 
