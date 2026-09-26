@@ -1,0 +1,231 @@
+.cc-tos-map {
+  display: grid;
+  grid-template-columns: 13rem 1fr;
+  gap: 2.5rem;
+  max-width: 48rem;
+  margin: 2rem auto;
+  color: var(--cc-text-dark);
+}
+
+
+/* =========================================================
+   SELECT MÓVIL 
+========================================================= */
+
+.cc-tm-mobile {
+  display: none;
+}
+
+
+/* =========================================================
+   ÍNDICE LATERAL 
+========================================================= */
+
+.cc-tm-rail {
+  position: sticky;
+  /* ajusta este valor a la altura real de tu navbar fija */
+  top: calc(var(--cc-navbar-height, 82px) + 1.5rem);
+  align-self: start;
+  font-size: 0.85rem;
+}
+
+.cc-tm-rail b {
+  display: block;
+  font-family: var(--cc-font-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--cc-accent-dark);
+  margin: 1rem 0 0.3rem;
+}
+
+.cc-tm-rail b:first-child {
+  margin-top: 0;
+}
+
+.cc-tm-rail a {
+  display: block;
+  color: var(--cc-muted-dark);
+  text-decoration: none;
+  padding: 0.15rem 0 0.15rem 0.7rem;
+  border-left: 3px solid rgba(140, 84, 138, 0.25);
+  transition: color var(--cc-transition), border-color var(--cc-transition);
+}
+
+.cc-tm-rail a:hover,
+.cc-tm-rail a:focus-visible {
+  color: var(--cc-text-dark);
+}
+
+/* añadida por tos-sticky-map.js según la sección visible */
+.cc-tm-rail a.is-active {
+  color: var(--cc-text-dark);
+  font-weight: 700;
+  border-color: var(--cc-accent-dark);
+}
+
+
+/* =========================================================
+   DATOS RÁPIDOS
+========================================================= */
+
+.cc-tm-quick {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.8rem 1.5rem;
+  background: var(--cc-text-dark);
+  color: var(--cc-text-light);
+  border-radius: 3rem;
+  padding: 1rem 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.cc-tm-quick div {
+  text-align: center;
+  font-size: 0.72rem;
+  line-height: 1.2;
+}
+
+.cc-tm-quick b {
+  display: block;
+  font-family: var(--cc-font-display);
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--cc-accent-light);
+}
+
+
+/* =========================================================
+   FASE 
+========================================================= */
+
+.cc-tm-phase {
+  font-family: var(--cc-font-display);
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: var(--cc-accent-dark);
+  margin: 2rem 0 1rem;
+}
+
+.cc-tm-content > .cc-tm-phase:first-of-type {
+  margin-top: 0;
+}
+
+
+/* =========================================================
+   SECCIÓN
+========================================================= */
+
+.cc-tm-section {
+  margin-bottom: 2.2rem;
+  /* deja hueco para que la sección no quede tapada por la
+     navbar fija al saltar desde el índice o el select */
+  scroll-margin-top: calc(var(--cc-navbar-height, 82px) + 1rem);
+}
+
+.cc-tm-section h3 {
+  font-family: var(--cc-font-display);
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+}
+
+.cc-tm-section p {
+  margin: 0 0 0.5rem;
+  color: var(--cc-muted-dark);
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+
+.cc-tm-section p:last-child {
+  margin-bottom: 0;
+}
+
+.cc-tm-sub {
+  margin-top: 0.4rem !important;
+  font-size: 0.92rem;
+}
+
+.cc-tm-sub b {
+  color: var(--cc-text-dark);
+}
+
+.cc-tm-sub i {
+  color: var(--cc-accent-dark);
+  font-style: normal;
+}
+
+
+/* =========================================================
+   ENLACES A DOCUMENTOS COMPLETOS
+========================================================= */
+
+.cc-tm-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.6rem;
+  margin-top: 1rem;
+  padding-top: 1.4rem;
+  border-top: 1px dashed rgba(140, 84, 138, 0.3);
+}
+
+.cc-tm-links a {
+  color: var(--cc-accent-dark);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color var(--cc-transition);
+}
+
+.cc-tm-links a:hover,
+.cc-tm-links a:focus-visible {
+  color: var(--cc-accent-light);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 736px) {
+
+  .cc-tos-map {
+    grid-template-columns: 1fr;
+  }
+
+  .cc-tm-rail {
+    display: none;
+  }
+
+  .cc-tm-mobile {
+    display: block;
+    position: sticky;
+    top: calc(var(--cc-navbar-height, 64px) + 0.75rem);
+    z-index: 5;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: 0.7rem 1rem;
+    font-family: var(--cc-font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--cc-text-dark);
+    background: var(--cc-bg-light);
+    border: 2px solid var(--cc-accent-dark);
+    border-radius: 2px;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .cc-tm-mobile {
+    background-image: linear-gradient(45deg, transparent 50%, var(--cc-accent-dark) 50%),
+                       linear-gradient(135deg, var(--cc-accent-dark) 50%, transparent 50%);
+    background-position: calc(100% - 1.3rem) center, calc(100% - 1rem) center;
+    background-size: 0.35rem 0.35rem, 0.35rem 0.35rem;
+    background-repeat: no-repeat;
+  }
+
+  .cc-tm-quick {
+    border-radius: 1.5rem;
+    padding: 1rem 1.4rem;
+  }
+
+}
