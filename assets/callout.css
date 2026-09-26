@@ -70,6 +70,10 @@
   line-height: 1.25;
 }
 
+.cc-callout-text b {
+  font-weight: 700;
+}
+
 .cc-callout-text:last-of-type {
   margin-bottom: 0;
 }
