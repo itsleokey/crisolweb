@@ -7,18 +7,13 @@
   color: var(--cc-text-dark);
 }
 
-.cc-stabs-mobile {
-  display: none;
-}
-
 
 /* =========================================================
-   ÍNDICE VERTICAL 
+   ÍNDICE VERTICAL
 ========================================================= */
 
 .cc-stabs-nav {
   position: sticky;
-  /* ajusta este valor a la altura real de tu navbar fija */
   top: calc(var(--cc-navbar-height, 82px) + 1.5rem);
   align-self: start;
   font-size: 0.85rem;
@@ -53,12 +48,13 @@
   transition: color var(--cc-transition), border-color var(--cc-transition);
 }
 
-.cc-stabs-nav a:hover, .cc-stabs-nav a:focus-visible,
-.cc-stabs-nav button:hover, .cc-stabs-nav button:focus-visible {
+.cc-stabs-nav a:hover,
+.cc-stabs-nav a:focus-visible,
+.cc-stabs-nav button:hover,
+.cc-stabs-nav button:focus-visible {
   color: var(--cc-text-dark);
 }
 
-/* añadida por sticky-tabs.js según el panel activo/visible */
 .cc-stabs-nav a.is-active,
 .cc-stabs-nav button.is-active {
   color: var(--cc-text-dark);
@@ -71,7 +67,7 @@
    PANELES
 ========================================================= */
 
-/* modo pestañas: solo se ve el panel activo */
+/* Modo pestañas: solo se ve el panel activo */
 .cc-stabs[data-mode="switch"] > .cc-stabs-content > .cc-stabs-panel {
   display: none;
 }
@@ -80,14 +76,19 @@
   display: block;
 }
 
-/* modo scrollspy: todo visible, hueco para no tapar con la navbar fija */
+/* Modo scrollspy: todo visible */
 .cc-stabs[data-mode="scroll"] > .cc-stabs-content > .cc-stabs-panel {
   scroll-margin-top: calc(var(--cc-navbar-height, 82px) + 1rem);
 }
 
+
 /* =========================================================
    MOBILE
 ========================================================= */
+
+.cc-stabs-mobile {
+  display: none;
+}
 
 @media (max-width: 736px) {
 
@@ -115,8 +116,12 @@
     background-image:
       linear-gradient(45deg, transparent 50%, var(--cc-accent-dark) 50%),
       linear-gradient(135deg, var(--cc-accent-dark) 50%, transparent 50%);
-    background-position: calc(100% - 1.3rem) center, calc(100% - 1rem) center;
-    background-size: 0.35rem 0.35rem, 0.35rem 0.35rem;
+    background-position:
+      calc(100% - 1.3rem) center,
+      calc(100% - 1rem) center;
+    background-size:
+      0.35rem 0.35rem,
+      0.35rem 0.35rem;
     background-repeat: no-repeat;
   }
 
