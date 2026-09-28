@@ -1,17 +1,17 @@
 /* =========================================================
-   CONCEPTOS CLAVE 
+   CONCEPTOS CLAVE
 ========================================================= */
 
 .cc-concept-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
+  gap: 1.5rem;
   margin: 0 0 2.5rem;
 }
 
 .cc-concept-card {
-  border: 1px solid rgba(106, 68, 105, 0.15);
-  padding: 1.1rem 1.3rem;
+  border-top: 2px solid var(--cc-accent-dark);
+  padding: 1rem 0 0;
 }
 
 .cc-concept-card summary {
@@ -30,17 +30,18 @@
   font-family: var(--cc-font-display);
   font-weight: 400;
   font-size: 1.15rem;
-  color: var(--cc-accent-dark);
+  color: var(--cc-text-dark);
 }
 
 .cc-concept-sum {
   font-size: 0.9rem;
-  color: var(--cc-text-dark);
-  line-height: 1.4;
+  color: var(--cc-muted-dark);
+  line-height: 1.45;
 }
 
 .cc-concept-more {
-  font-size: 0.75rem;
+  margin-top: 0.3rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -55,7 +56,7 @@
   margin-top: 0.9rem;
   padding-top: 0.9rem;
   border-top: 1px dashed rgba(140, 84, 138, 0.3);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: var(--cc-text-dark);
   line-height: 1.5;
 }
@@ -65,7 +66,7 @@
 }
 
 .cc-concept-note {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--cc-muted-dark);
   margin-top: 0.5rem;
 }
@@ -76,100 +77,86 @@
 ========================================================= */
 
 .cc-lic-overview h2 {
+  margin: 0 0 0.5rem;
   font-family: var(--cc-font-display);
   font-weight: 400;
   font-size: 1.7rem;
-  margin: 0 0 0.5rem;
   color: var(--cc-text-dark);
 }
 
 .cc-lic-overview > p {
-  font-size: 0.98rem;
-  color: var(--cc-muted-dark);
-  line-height: 1.55;
   max-width: 44rem;
   margin: 0 0 1.6rem;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--cc-muted-dark);
 }
 
 .cc-lic-ovcards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
   margin-bottom: 2.5rem;
 }
 
 .cc-lic-ovcard {
-  text-align: center;
-  background: #fff;
-  border: 1px solid rgba(106, 68, 105, 0.15);
-  padding: 1.4rem 1rem;
+  padding: 1rem 0;
+  border-top: 2px solid var(--cc-accent-dark);
+  text-align: left;
 }
 
 .cc-lic-ovcard i {
   display: block;
-  font-size: 1.6rem;
-  color: var(--cc-accent-dark);
   margin-bottom: 0.6rem;
+  font-size: 1.4rem;
+  color: var(--cc-accent-dark);
 }
 
 .cc-lic-ovcard h3 {
+  margin: 0 0 0.4rem;
   font-family: var(--cc-font-display);
   font-weight: 400;
   font-size: 1.15rem;
-  margin: 0 0 0.4rem;
+  color: var(--cc-text-dark);
 }
 
 .cc-lic-ovcard p {
+  margin: 0 0 0.7rem;
   font-size: 0.85rem;
-  color: var(--cc-muted-dark);
-  margin: 0 0 0.8rem;
   line-height: 1.4;
+  color: var(--cc-muted-dark);
 }
 
 .cc-lic-ovtag {
   display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--cc-accent-dark);
+  padding: 0.2rem 0.55rem;
   border: 1px solid var(--cc-accent-dark);
   border-radius: 2px;
-  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--cc-accent-dark);
 }
 
 
 /* =========================================================
-   TABLA DE PRECIOS 
+   CABECERA DE LICENCIA
 ========================================================= */
 
-.cc-lic-price {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0.6rem 0;
-  font-size: 0.88rem;
-}
-
-.cc-lic-price th,
-.cc-lic-price td {
-  text-align: left;
-  padding: 0.35rem 0.6rem;
-  border-bottom: 1px solid rgba(106, 68, 105, 0.15);
-}
-
-.cc-lic-price th {
-  font-weight: 700;
-  color: var(--cc-accent-dark);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-.cc-lic-price td:first-child {
+.cc-stabs-panel > h3 {
+  margin: 0 0 0.45rem;
+  font-family: var(--cc-font-display);
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 1.15;
   color: var(--cc-text-dark);
-  font-weight: 600;
 }
 
-.cc-lic-price--groups td:last-child {
-  text-align: right;
+.cc-lic-tagline {
+  max-width: 42rem;
+  margin: 0 0 1.8rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--cc-muted-dark);
 }
 
 
@@ -182,150 +169,59 @@
 }
 
 .cc-lic-mod h4 {
+  margin: 0 0 0.2rem;
   font-family: var(--cc-font-display);
   font-weight: 400;
   font-size: 1.1rem;
-  margin: 0 0 0.2rem;
   color: var(--cc-text-dark);
 }
 
 .cc-lic-mod-tag {
+  margin: 0 0 0.3rem;
   font-size: 0.88rem;
   color: var(--cc-muted-dark);
-  margin: 0 0 0.3rem;
 }
 
 .cc-lic-mod-note {
-  font-size: 0.8rem;
+  margin: 0.45rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
   color: var(--cc-muted-dark);
-  margin: 0.3rem 0 0;
-  line-height: 1.4;
-}
-
-.cc-lic-tagline {
-  font-size: 1rem;
-  color: var(--cc-muted-dark);
-  margin: 0 0 1.2rem;
-  line-height: 1.5;
 }
 
 
 /* =========================================================
-   PERMITE / NO PERMITE (siempre plegado por defecto)
-========================================================= */
-
-.cc-lic-rules {
-  margin-top: 1.2rem;
-  font-size: 0.88rem;
-  color: var(--cc-muted-dark);
-}
-
-.cc-lic-rules summary {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-  color: var(--cc-muted-dark);
-  list-style: none;
-  padding: 0.6rem;
-  transition:
-    background var(--cc-transition),
-    color var(--cc-transition);
-}
-
-.cc-lic-rules summary::-webkit-details-marker {
-  display: none;
-}
-
-.cc-lic-rules summary::after {
-  content: "";
-  flex: 0 0 auto;
-  width: 0.5rem;
-  height: 0.5rem;
-  margin-left: 0.9rem;
-  border-right: 2px solid var(--cc-accent-dark);
-  border-bottom: 2px solid var(--cc-accent-dark);
-  transform: rotate(45deg) translateY(-2px);
-  transition: transform var(--cc-transition);
-}
-
-.cc-lic-rules[open] summary::after {
-  transform: rotate(225deg) translateY(-2px);
-}
-
-.cc-lic-rules summary:hover,
-.cc-lic-rules summary:focus-visible {
-  background: rgba(140, 84, 138, 0.08);
-  color: var(--cc-accent-dark);
-}
-
-.cc-lic-rules .cc-lic-cols {
-  padding: 0 0.6rem;
-}
-
-.cc-lic-cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-top: 0.6rem;
-}
-
-.cc-lic-collabel {
-  display: block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--cc-muted-dark);
-  margin-bottom: 0.3rem;
-}
-
-.cc-lic-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.cc-lic-list li {
-  position: relative;
-  padding-left: 1.1rem;
-  margin-bottom: 0.3rem;
-  font-size: 0.85rem;
-}
-
-.cc-lic-list li::before {
-  position: absolute;
-  left: 0;
-  font-weight: 700;
-}
-
-.cc-lic-list--ok li::before { content: "✓"; color: var(--cc-accent-dark); }
-.cc-lic-list--no li::before { content: "✕"; color: var(--cc-muted-dark); }
-
-
-/* =========================================================
-   TABLA
+   ACORDEÓN DE MODALIDADES
 ========================================================= */
 
 .cc-lic-mod-acc {
-  border-top: 1px solid rgba(106, 68, 105, 0.15);
+  border-top: 1px solid rgba(106, 68, 105, 0.18);
 }
 
 .cc-lic-mod-acc:last-of-type {
-  border-bottom: 1px solid rgba(106, 68, 105, 0.15);
+  border-bottom: 1px solid rgba(106, 68, 105, 0.18);
 }
 
 .cc-lic-mod-acc summary {
-  cursor: pointer;
-  list-style: none;
-  padding: 0.9rem 0.6rem;
   display: flex;
   align-items: center;
+  gap: 0.75rem;
+
+  padding: 0.85rem 0.35rem;
+
+  cursor: pointer;
+  list-style: none;
+
+  font-family: var(--cc-font-body);
+  font-size: 0.9rem;
   font-weight: 600;
+  line-height: 1.3;
+
   color: var(--cc-text-dark);
+
   transition:
-    background var(--cc-transition),
-    color var(--cc-transition);
+    color var(--cc-transition),
+    background var(--cc-transition);
 }
 
 .cc-lic-mod-acc summary::-webkit-details-marker {
@@ -334,20 +230,29 @@
 
 .cc-lic-mod-acc summary b {
   margin-left: auto;
-  color: var(--cc-accent-dark);
+
+  font-size: 0.8rem;
   font-weight: 700;
-  font-size: 0.85rem;
+  white-space: nowrap;
+
+  color: var(--cc-accent-dark);
 }
 
 .cc-lic-mod-acc summary::after {
   content: "";
+
   flex: 0 0 auto;
-  width: 0.5rem;
-  height: 0.5rem;
-  margin-left: 0.9rem;
+
+  width: 0.45rem;
+  height: 0.45rem;
+
+  margin-right: 0.15rem;
+
   border-right: 2px solid var(--cc-accent-dark);
   border-bottom: 2px solid var(--cc-accent-dark);
+
   transform: rotate(45deg) translateY(-2px);
+
   transition: transform var(--cc-transition);
 }
 
@@ -357,10 +262,279 @@
 
 .cc-lic-mod-acc summary:hover,
 .cc-lic-mod-acc summary:focus-visible {
-  background: rgba(140, 84, 138, 0.08);
   color: var(--cc-accent-dark);
+  background: rgba(140, 84, 138, 0.06);
 }
 
 .cc-lic-mod-acc .cc-lic-mod {
-  padding: 0 0.6rem 1rem;
+  padding: 0.15rem 0.35rem 1rem;
+}
+
+
+/* =========================================================
+   TABLAS DE PRECIOS
+========================================================= */
+
+.cc-lic-price {
+  width: 100%;
+  margin: 0.5rem 0;
+
+  border-collapse: collapse;
+
+  font-size: 0.86rem;
+  color: var(--cc-text-dark);
+}
+
+.cc-lic-price th,
+.cc-lic-price td {
+  padding: 0.45rem 0.55rem;
+
+  border-bottom: 1px solid rgba(106, 68, 105, 0.15);
+
+  text-align: left;
+  vertical-align: middle;
+}
+
+.cc-lic-price th {
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  color: var(--cc-accent-dark);
+}
+
+.cc-lic-price td:first-child {
+  font-weight: 600;
+  color: var(--cc-text-dark);
+}
+
+.cc-lic-price td:not(:first-child) {
+  text-align: right;
+}
+
+.cc-lic-price tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+
+/* =========================================================
+   PERMITE / NO PERMITE
+========================================================= */
+
+.cc-lic-rules {
+  margin-top: 1.5rem;
+
+  font-size: 0.88rem;
+  color: var(--cc-muted-dark);
+}
+
+.cc-lic-rules summary {
+  display: flex;
+  align-items: center;
+
+  padding: 0.65rem 0.35rem;
+
+  cursor: pointer;
+  list-style: none;
+
+  font-weight: 600;
+  color: var(--cc-text-dark);
+
+  transition:
+    color var(--cc-transition),
+    background var(--cc-transition);
+}
+
+.cc-lic-rules summary::-webkit-details-marker {
+  display: none;
+}
+
+.cc-lic-rules summary::after {
+  content: "";
+
+  flex: 0 0 auto;
+
+  width: 0.45rem;
+  height: 0.45rem;
+
+  margin-left: 0.9rem;
+
+  border-right: 2px solid var(--cc-accent-dark);
+  border-bottom: 2px solid var(--cc-accent-dark);
+
+  transform: rotate(45deg) translateY(-2px);
+
+  transition: transform var(--cc-transition);
+}
+
+.cc-lic-rules[open] summary::after {
+  transform: rotate(225deg) translateY(-2px);
+}
+
+.cc-lic-rules summary:hover,
+.cc-lic-rules summary:focus-visible {
+  color: var(--cc-accent-dark);
+  background: rgba(140, 84, 138, 0.06);
+}
+
+.cc-lic-rules .cc-lic-cols {
+  padding: 0.5rem 0.35rem 0;
+}
+
+
+/* =========================================================
+   COLUMNAS PERMITE / NO PERMITE
+========================================================= */
+
+.cc-lic-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+
+  margin-top: 0.6rem;
+}
+
+.cc-lic-collabel {
+  display: block;
+
+  margin-bottom: 0.4rem;
+
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.2;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  color: var(--cc-accent-dark);
+}
+
+.cc-lic-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.cc-lic-list li {
+  position: relative;
+
+  margin-bottom: 0.45rem;
+  padding-left: 1.1rem;
+
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.cc-lic-list li::before {
+  position: absolute;
+  left: 0;
+
+  font-weight: 700;
+}
+
+.cc-lic-list--ok li::before {
+  content: "✓";
+  color: var(--cc-accent-dark);
+}
+
+.cc-lic-list--no li::before {
+  content: "✕";
+  color: var(--cc-muted-dark);
+}
+
+
+/* =========================================================
+   CONTENIDO PENDIENTE / PLACEHOLDER
+========================================================= */
+
+.cc-lic-stub {
+  margin: 0;
+
+  padding: 1rem 0;
+
+  border-top: 1px dashed rgba(140, 84, 138, 0.3);
+  border-bottom: 1px dashed rgba(140, 84, 138, 0.3);
+
+  font-size: 0.85rem;
+  line-height: 1.5;
+
+  color: var(--cc-muted-dark);
+}
+
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
+@media (max-width: 736px) {
+
+  .cc-concept-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .cc-lic-ovcards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cc-stabs-panel > h3 {
+    font-size: 1.6rem;
+  }
+
+  .cc-lic-tagline {
+    font-size: 0.9rem;
+  }
+
+  .cc-lic-mod-acc summary {
+    padding: 0.85rem 0.25rem;
+  }
+
+  .cc-lic-mod-acc .cc-lic-mod {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  .cc-lic-price {
+    font-size: 0.8rem;
+  }
+
+  .cc-lic-price th,
+  .cc-lic-price td {
+    padding: 0.4rem 0.35rem;
+  }
+
+  .cc-lic-cols {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .cc-lic-ovcards {
+    grid-template-columns: 1fr;
+  }
+
+  .cc-lic-price {
+    font-size: 0.76rem;
+  }
+
+  .cc-lic-price th {
+    font-size: 0.62rem;
+  }
+
+  .cc-lic-mod-acc summary {
+    gap: 0.45rem;
+    font-size: 0.84rem;
+  }
+
+  .cc-lic-mod-acc summary b {
+    font-size: 0.76rem;
+  }
+
 }
