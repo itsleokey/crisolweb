@@ -11,8 +11,26 @@
   margin: 0 0.1rem;
   box-sizing: border-box;
   padding: 1.25rem 1.5rem;
-  color: var(--cc-text-dark);
-  background: #E79DE421;
+  color: var(--callout-text);
+  background: var(--callout-background);
+}
+
+/* =========================================================
+   COLOR VARIANTS
+========================================================= */
+
+.cc-callout--light {
+  --callout-background: rgba(231, 157, 228, 0.13);
+  --callout-accent: var(--cc-accent-dark);
+  --callout-title: var(--cc-accent-dark);
+  --callout-text: var(--cc-text-dark);
+}
+
+.cc-callout--dark {
+  --callout-background: rgba(181, 106, 178, 0.13);
+  --callout-accent: var(--cc-accent-light);
+  --callout-title: var(--cc-accent-light);
+  --callout-text: var(--cc-text-light);
 }
 
 
@@ -27,7 +45,7 @@
   left: 0;
   width: 6px;
   height: 100%;
-  background: var(--cc-accent-dark);
+  background: var(--callout-accent);
 }
 
 
@@ -41,7 +59,7 @@
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  color: var(--cc-accent-dark);
+  color: var(--callout-accent);
 }
 
 
