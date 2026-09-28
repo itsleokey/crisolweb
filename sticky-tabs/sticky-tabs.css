@@ -8,6 +8,7 @@
   gap: 2.5rem;
   max-width: 48rem;
   margin: 2rem auto;
+  color: var(--cc-text-dark);
 }
 
 
@@ -22,45 +23,43 @@
   font-size: 0.85rem;
 }
 
-
 .cc-stabs-nav b {
   display: block;
   margin: 1rem 0 0.3rem;
+
   font-family: var(--cc-font-display);
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 400;
-  text-transform: uppercase;
+
   color: var(--cc-accent-dark);
 }
-
 
 .cc-stabs-nav b:first-child {
   margin-top: 0;
 }
 
-
 .cc-stabs-nav a,
 .cc-stabs-nav button {
   display: block;
   width: 100%;
+
   padding: 0.2rem 0 0.2rem 0.7rem;
   border: 0;
   border-left: 3px solid rgba(140, 84, 138, 0.25);
+
   background: none;
+
   font-family: var(--cc-font-body);
   color: var(--cc-muted-dark);
   text-align: left;
   text-decoration: none;
+
   cursor: pointer;
-  text-transform: uppercase;
-  line-height: 1;
-  font-size: 0.7rem;
-  font-weight: 600;
+
   transition:
     color var(--cc-transition),
     border-color var(--cc-transition);
 }
-
 
 .cc-stabs-nav a:hover,
 .cc-stabs-nav a:focus-visible,
@@ -68,7 +67,6 @@
 .cc-stabs-nav button:focus-visible {
   color: var(--cc-text-dark);
 }
-
 
 .cc-stabs-nav a.is-active,
 .cc-stabs-nav button.is-active {
@@ -97,7 +95,6 @@
   display: none;
 }
 
-
 .cc-stabs[data-mode="switch"]
   > .cc-stabs-content
   > .cc-stabs-panel.is-active {
@@ -112,8 +109,115 @@
 .cc-stabs[data-mode="scroll"]
   > .cc-stabs-content
   > .cc-stabs-panel {
-  scroll-margin-top:
-    calc(var(--cc-navbar-height, 82px) + 1rem);
+  scroll-margin-top: calc(var(--cc-navbar-height, 82px) + 1rem);
+}
+
+
+/* =========================================================
+   NAVEGACIÓN FIJA
+========================================================= */
+
+.cc-stabs-nav.is-fixed {
+  position: fixed;
+  z-index: 20;
+}
+
+
+/* =========================================================
+   RESUMEN DE TÉRMINOS DE SERVICIO
+========================================================= */
+
+.cc-tos-summary .cc-stabs-panel {
+  margin-bottom: 2.2rem;
+}
+
+
+/* Títulos de cada punto */
+
+.cc-tos-summary .cc-stabs-panel h3 {
+  margin: 0 0 0.5rem;
+
+  font-family: var(--cc-font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+
+/* Texto de los paneles */
+
+.cc-tos-summary .cc-stabs-panel p {
+  margin: 0 0 0.5rem;
+
+  color: var(--cc-muted-dark);
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+
+.cc-tos-summary .cc-stabs-panel p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Separadores de sección */
+
+.cc-tos-summary .cc-stabs-section-label {
+  margin: 2rem 0 1rem;
+
+  font-family: var(--cc-font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+
+  color: var(--cc-accent-dark);
+}
+
+.cc-tos-summary
+  > .cc-stabs-content
+  > .cc-stabs-section-label:first-child {
+  margin-top: 0;
+}
+
+
+/* Texto secundario dentro de un panel */
+
+.cc-tos-summary .cc-stabs-panel .cc-tos-sub {
+  margin-top: 0.4rem;
+  font-size: 0.92rem;
+}
+
+.cc-tos-summary .cc-tos-sub b {
+  color: var(--cc-text-dark);
+}
+
+.cc-tos-summary .cc-tos-sub i {
+  color: var(--cc-accent-dark);
+  font-style: normal;
+}
+
+
+/* Enlaces a documentos completos */
+
+.cc-tos-summary .cc-tos-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.6rem;
+
+  margin-top: 1rem;
+  padding-top: 1.4rem;
+
+  border-top: 1px dashed rgba(140, 84, 138, 0.3);
+}
+
+.cc-tos-summary .cc-tos-links a {
+  color: var(--cc-accent-dark);
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: color var(--cc-transition);
+}
+
+.cc-tos-summary .cc-tos-links a:hover,
+.cc-tos-summary .cc-tos-links a:focus-visible {
+  color: var(--cc-accent-light);
 }
 
 
@@ -127,11 +231,9 @@
     grid-template-columns: 1fr;
   }
 
-
   .cc-stabs-nav {
     display: none;
   }
-
 
   .cc-stabs-mobile {
     display: block;
@@ -181,6 +283,10 @@
       0.35rem 0.35rem;
 
     background-repeat: no-repeat;
+  }
+
+  .cc-stabs-nav.is-fixed {
+    display: none;
   }
 
 }
