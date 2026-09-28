@@ -359,46 +359,91 @@ function initFixedNav(root) {
   }
 
 
-  const originalRect =
-    nav.getBoundingClientRect();
+  let originalRect;
+  let originalTop;
+  let originalLeft;
+  let originalWidth;
+  let placeholder;
 
 
-  const originalTop =
-    originalRect.top +
-    window.scrollY;
+  function setupFixedNav() {
+
+    const rect =
+      nav.getBoundingClientRect();
 
 
-  const originalLeft =
-    originalRect.left;
+    if (
+      rect.width <= 0 ||
+      rect.height <= 0
+    ) {
+      requestAnimationFrame(
+        setupFixedNav
+      );
+      return;
+    }
 
 
-  const originalWidth =
-    originalRect.width;
+    originalRect = rect;
+
+    originalTop =
+      rect.top +
+      window.scrollY;
+
+    originalLeft =
+      rect.left;
+
+    originalWidth =
+      rect.width;
 
 
-  const placeholder =
-    document.createElement("div");
+    placeholder =
+      document.createElement("div");
 
 
-  placeholder.style.display =
-    "none";
+    placeholder.style.display =
+      "none";
+
+    placeholder.style.width =
+      `${originalWidth}px`;
+
+    placeholder.style.height =
+      `${originalRect.height}px`;
 
 
-  placeholder.style.width =
-    `${originalWidth}px`;
+    nav.parentNode.insertBefore(
+      placeholder,
+      nav
+    );
 
 
-  placeholder.style.height =
-    `${originalRect.height}px`;
+    window.addEventListener(
+      "scroll",
+      updateFixedNav,
+      {
+        passive: true
+      }
+    );
 
 
-  nav.parentNode.insertBefore(
-    placeholder,
-    nav
-  );
+    window.addEventListener(
+      "resize",
+      updateFixedNav
+    );
+
+
+    updateFixedNav();
+  }
 
 
   function updateFixedNav() {
+
+    if (
+      !placeholder ||
+      !originalRect
+    ) {
+      return;
+    }
+
 
     if (
       window.matchMedia(
@@ -410,7 +455,6 @@ function initFixedNav(root) {
         "is-fixed"
       );
 
-
       placeholder.style.display =
         "none";
 
@@ -419,19 +463,15 @@ function initFixedNav(root) {
         "top"
       );
 
-
       nav.style.removeProperty(
         "left"
       );
-
 
       nav.style.removeProperty(
         "width"
       );
 
-
       return;
-
     }
 
 
@@ -465,20 +505,16 @@ function initFixedNav(root) {
           "is-fixed"
         );
 
-
         placeholder.style.display =
           "block";
-
       }
 
 
       nav.style.top =
         `${offset}px`;
 
-
       nav.style.left =
         `${originalLeft}px`;
-
 
       nav.style.width =
         `${originalWidth}px`;
@@ -490,7 +526,6 @@ function initFixedNav(root) {
         "is-fixed"
       );
 
-
       placeholder.style.display =
         "none";
 
@@ -499,11 +534,9 @@ function initFixedNav(root) {
         "top"
       );
 
-
       nav.style.removeProperty(
         "left"
       );
-
 
       nav.style.removeProperty(
         "width"
@@ -514,21 +547,7 @@ function initFixedNav(root) {
   }
 
 
-  window.addEventListener(
-    "scroll",
-    updateFixedNav,
-    {
-      passive: true
-    }
-  );
-
-
-  window.addEventListener(
-    "resize",
-    updateFixedNav
-  );
-
-
-  updateFixedNav();
+  setupFixedNav();
 
 }
+
