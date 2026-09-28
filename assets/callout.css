@@ -78,7 +78,7 @@
   font-family: var(--cc-font-body);
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--cc-accent-dark);
+  color: var(--callout-title);
 }
 
 .cc-callout-text {
