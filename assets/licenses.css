@@ -1,0 +1,366 @@
+/* =========================================================
+   CONCEPTOS CLAVE 
+========================================================= */
+
+.cc-concept-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin: 0 0 2.5rem;
+}
+
+.cc-concept-card {
+  border: 1px solid rgba(106, 68, 105, 0.15);
+  padding: 1.1rem 1.3rem;
+}
+
+.cc-concept-card summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.cc-concept-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.cc-concept-title {
+  font-family: var(--cc-font-display);
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: var(--cc-accent-dark);
+}
+
+.cc-concept-sum {
+  font-size: 0.9rem;
+  color: var(--cc-text-dark);
+  line-height: 1.4;
+}
+
+.cc-concept-more {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cc-accent-dark);
+}
+
+.cc-concept-card[open] .cc-concept-more {
+  display: none;
+}
+
+.cc-concept-body {
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed rgba(140, 84, 138, 0.3);
+  font-size: 0.92rem;
+  color: var(--cc-text-dark);
+  line-height: 1.5;
+}
+
+.cc-concept-body p {
+  margin: 0 0 0.6rem;
+}
+
+.cc-concept-note {
+  font-size: 0.82rem;
+  color: var(--cc-muted-dark);
+  margin-top: 0.5rem;
+}
+
+
+/* =========================================================
+   RESUMEN "DE UN VISTAZO"
+========================================================= */
+
+.cc-lic-overview h2 {
+  font-family: var(--cc-font-display);
+  font-weight: 400;
+  font-size: 1.7rem;
+  margin: 0 0 0.5rem;
+  color: var(--cc-text-dark);
+}
+
+.cc-lic-overview > p {
+  font-size: 0.98rem;
+  color: var(--cc-muted-dark);
+  line-height: 1.55;
+  max-width: 44rem;
+  margin: 0 0 1.6rem;
+}
+
+.cc-lic-ovcards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.cc-lic-ovcard {
+  text-align: center;
+  background: #fff;
+  border: 1px solid rgba(106, 68, 105, 0.15);
+  padding: 1.4rem 1rem;
+}
+
+.cc-lic-ovcard i {
+  display: block;
+  font-size: 1.6rem;
+  color: var(--cc-accent-dark);
+  margin-bottom: 0.6rem;
+}
+
+.cc-lic-ovcard h3 {
+  font-family: var(--cc-font-display);
+  font-weight: 400;
+  font-size: 1.15rem;
+  margin: 0 0 0.4rem;
+}
+
+.cc-lic-ovcard p {
+  font-size: 0.85rem;
+  color: var(--cc-muted-dark);
+  margin: 0 0 0.8rem;
+  line-height: 1.4;
+}
+
+.cc-lic-ovtag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--cc-accent-dark);
+  border: 1px solid var(--cc-accent-dark);
+  border-radius: 2px;
+  padding: 0.2rem 0.6rem;
+}
+
+
+/* =========================================================
+   TABLA DE PRECIOS 
+========================================================= */
+
+.cc-lic-price {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.6rem 0;
+  font-size: 0.88rem;
+}
+
+.cc-lic-price th,
+.cc-lic-price td {
+  text-align: left;
+  padding: 0.35rem 0.6rem;
+  border-bottom: 1px solid rgba(106, 68, 105, 0.15);
+}
+
+.cc-lic-price th {
+  font-weight: 700;
+  color: var(--cc-accent-dark);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.cc-lic-price td:first-child {
+  color: var(--cc-text-dark);
+  font-weight: 600;
+}
+
+.cc-lic-price--groups td:last-child {
+  text-align: right;
+}
+
+
+/* =========================================================
+   BLOQUE DE MODALIDAD
+========================================================= */
+
+.cc-lic-mod {
+  margin-bottom: 1.4rem;
+}
+
+.cc-lic-mod h4 {
+  font-family: var(--cc-font-display);
+  font-weight: 400;
+  font-size: 1.1rem;
+  margin: 0 0 0.2rem;
+  color: var(--cc-text-dark);
+}
+
+.cc-lic-mod-tag {
+  font-size: 0.88rem;
+  color: var(--cc-muted-dark);
+  margin: 0 0 0.3rem;
+}
+
+.cc-lic-mod-note {
+  font-size: 0.8rem;
+  color: var(--cc-muted-dark);
+  margin: 0.3rem 0 0;
+  line-height: 1.4;
+}
+
+.cc-lic-tagline {
+  font-size: 1rem;
+  color: var(--cc-muted-dark);
+  margin: 0 0 1.2rem;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   PERMITE / NO PERMITE (siempre plegado por defecto)
+========================================================= */
+
+.cc-lic-rules {
+  margin-top: 1.2rem;
+  font-size: 0.88rem;
+  color: var(--cc-muted-dark);
+}
+
+.cc-lic-rules summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--cc-muted-dark);
+  list-style: none;
+  padding: 0.6rem;
+  transition:
+    background var(--cc-transition),
+    color var(--cc-transition);
+}
+
+.cc-lic-rules summary::-webkit-details-marker {
+  display: none;
+}
+
+.cc-lic-rules summary::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.9rem;
+  border-right: 2px solid var(--cc-accent-dark);
+  border-bottom: 2px solid var(--cc-accent-dark);
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform var(--cc-transition);
+}
+
+.cc-lic-rules[open] summary::after {
+  transform: rotate(225deg) translateY(-2px);
+}
+
+.cc-lic-rules summary:hover,
+.cc-lic-rules summary:focus-visible {
+  background: rgba(140, 84, 138, 0.08);
+  color: var(--cc-accent-dark);
+}
+
+.cc-lic-rules .cc-lic-cols {
+  padding: 0 0.6rem;
+}
+
+.cc-lic-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.6rem;
+}
+
+.cc-lic-collabel {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cc-muted-dark);
+  margin-bottom: 0.3rem;
+}
+
+.cc-lic-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cc-lic-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.85rem;
+}
+
+.cc-lic-list li::before {
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+}
+
+.cc-lic-list--ok li::before { content: "✓"; color: var(--cc-accent-dark); }
+.cc-lic-list--no li::before { content: "✕"; color: var(--cc-muted-dark); }
+
+
+/* =========================================================
+   TABLA
+========================================================= */
+
+.cc-lic-mod-acc {
+  border-top: 1px solid rgba(106, 68, 105, 0.15);
+}
+
+.cc-lic-mod-acc:last-of-type {
+  border-bottom: 1px solid rgba(106, 68, 105, 0.15);
+}
+
+.cc-lic-mod-acc summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.9rem 0.6rem;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--cc-text-dark);
+  transition:
+    background var(--cc-transition),
+    color var(--cc-transition);
+}
+
+.cc-lic-mod-acc summary::-webkit-details-marker {
+  display: none;
+}
+
+.cc-lic-mod-acc summary b {
+  margin-left: auto;
+  color: var(--cc-accent-dark);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.cc-lic-mod-acc summary::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.9rem;
+  border-right: 2px solid var(--cc-accent-dark);
+  border-bottom: 2px solid var(--cc-accent-dark);
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform var(--cc-transition);
+}
+
+.cc-lic-mod-acc[open] summary::after {
+  transform: rotate(225deg) translateY(-2px);
+}
+
+.cc-lic-mod-acc summary:hover,
+.cc-lic-mod-acc summary:focus-visible {
+  background: rgba(140, 84, 138, 0.08);
+  color: var(--cc-accent-dark);
+}
+
+.cc-lic-mod-acc .cc-lic-mod {
+  padding: 0 0.6rem 1rem;
+}
