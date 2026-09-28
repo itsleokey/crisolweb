@@ -14,11 +14,13 @@ function initAllStickyTabs() {
   });
 }
 
+
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initAllStickyTabs);
 } else {
   initAllStickyTabs();
 }
+
 
 function initStickyTabs(root) {
 
