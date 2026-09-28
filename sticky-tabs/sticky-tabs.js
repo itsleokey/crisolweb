@@ -1,6 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
-
+function initAllStickyTabs() {
   document.querySelectorAll(".cc-stabs").forEach((root) => {
+
+    if (root.dataset.stabsInitialized === "true") return;
+
+    root.dataset.stabsInitialized = "true";
 
     initStickyTabs(root);
 
@@ -9,8 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
   });
+}
 
-});
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initAllStickyTabs);
+} else {
+  initAllStickyTabs();
+}
 
 function initStickyTabs(root) {
 
