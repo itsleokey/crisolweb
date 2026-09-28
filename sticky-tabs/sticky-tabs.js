@@ -38,6 +38,26 @@ if (document.readyState === "loading") {
 
 }
 
+const navbarHeight =
+  parseFloat(
+    getComputedStyle(document.documentElement)
+      .getPropertyValue("--cc-navbar-height")
+  ) || 82;
+
+const observer = new IntersectionObserver((entries) => {
+  const visible = entries
+    .filter((entry) => entry.isIntersecting)
+    .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+  if (visible.length) {
+    updateActiveLink(visible[0].target.id);
+  }
+}, {
+  root: null,
+  rootMargin: `-${navbarHeight + 24}px 0px -45% 0px`,
+  threshold: [0.1, 0.25, 0.5, 0.75]
+});
+
 
 /* =========================================================
    COMPONENTE PRINCIPAL
