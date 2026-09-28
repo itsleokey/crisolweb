@@ -8,8 +8,8 @@
 
 .cc-gb-chapter-title {
   font-family: var(--cc-font-display);
-  color: var(--cc-accent-light);
-  border-bottom: 4px double #A07B9F8F;
+  color: var(--cc-accent-dark);
+  border-bottom: 4px double var(--cc-muted-dark);
   padding-bottom: 0.3rem;
   margin: 0 0 1rem;
   text-transform: uppercase;
@@ -23,7 +23,7 @@
   font-family: var(--cc-font-body);
   font-size: 0.7rem;
   letter-spacing: 0.12em;
-  color: var(--cc-muted-light);
+  color: var(--cc-muted-dark);
   text-transform: uppercase;
   width: calc(100% + 0.025rem);
   line-height: 1;
@@ -47,12 +47,12 @@
   margin: 0;
   font-size: 1.1rem;
   font-family: var(--cc-font-body);
-  color: var(--cc-muted-light);
+  color: var(--cc-muted-dark);
   font-weight: 700;
 }
 
 .cc-gb-line b {
-   color: var(--cc-accent-light);
+   color: var(--cc-accent-dark);
 }
 
 .cc-gb-line::after {
@@ -67,13 +67,13 @@
   font-weight: 700;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: var(--cc-muted-light);
+  color: var(--cc-muted-dark);
   white-space: nowrap;
 }
 
 .cc-gb-text {
   margin: 0.3rem auto 0 1.5rem;
-  color: var(--cc-text-light);
+  color: var(--cc-text-dark);
   font-size: 1em;
   line-height: 1.25;
   width: 98%;
