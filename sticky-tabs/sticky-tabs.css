@@ -27,11 +27,10 @@
 .cc-stabs-nav b {
   display: block;
   margin: 1rem 0 0.3rem;
-
   font-family: var(--cc-font-display);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 400;
-
+  text-transform: uppercase;
   color: var(--cc-accent-dark);
 }
 
@@ -45,20 +44,18 @@
 .cc-stabs-nav button {
   display: block;
   width: 100%;
-
   padding: 0.2rem 0 0.2rem 0.7rem;
   border: 0;
   border-left: 3px solid rgba(140, 84, 138, 0.25);
-
   background: none;
-
   font-family: var(--cc-font-body);
   color: var(--cc-muted-dark);
   text-align: left;
   text-decoration: none;
-
   cursor: pointer;
-
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 600;
   transition:
     color var(--cc-transition),
     border-color var(--cc-transition);
