@@ -1,4 +1,4 @@
-.cc-tos-map {
+.cc-stabs {
   display: grid;
   grid-template-columns: 13rem 1fr;
   gap: 2.5rem;
@@ -7,21 +7,16 @@
   color: var(--cc-text-dark);
 }
 
-
-/* =========================================================
-   SELECT MÓVIL 
-========================================================= */
-
-.cc-tm-mobile {
+.cc-stabs-mobile {
   display: none;
 }
 
 
 /* =========================================================
-   ÍNDICE LATERAL 
+   ÍNDICE VERTICAL 
 ========================================================= */
 
-.cc-tm-rail {
+.cc-stabs-nav {
   position: sticky;
   /* ajusta este valor a la altura real de tu navbar fija */
   top: calc(var(--cc-navbar-height, 82px) + 1.5rem);
@@ -29,35 +24,43 @@
   font-size: 0.85rem;
 }
 
-.cc-tm-rail b {
+.cc-stabs-nav b {
   display: block;
   font-family: var(--cc-font-display);
-  font-size: 1.05rem;
   font-weight: 400;
+  font-size: 1.05rem;
   color: var(--cc-accent-dark);
   margin: 1rem 0 0.3rem;
 }
 
-.cc-tm-rail b:first-child {
+.cc-stabs-nav b:first-child {
   margin-top: 0;
 }
 
-.cc-tm-rail a {
+.cc-stabs-nav a,
+.cc-stabs-nav button {
   display: block;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: none;
+  font-family: var(--cc-font-body);
   color: var(--cc-muted-dark);
   text-decoration: none;
-  padding: 0.15rem 0 0.15rem 0.7rem;
+  cursor: pointer;
+  padding: 0.2rem 0 0.2rem 0.7rem;
   border-left: 3px solid rgba(140, 84, 138, 0.25);
   transition: color var(--cc-transition), border-color var(--cc-transition);
 }
 
-.cc-tm-rail a:hover,
-.cc-tm-rail a:focus-visible {
+.cc-stabs-nav a:hover, .cc-stabs-nav a:focus-visible,
+.cc-stabs-nav button:hover, .cc-stabs-nav button:focus-visible {
   color: var(--cc-text-dark);
 }
 
-/* añadida por tos-sticky-map.js según la sección visible */
-.cc-tm-rail a.is-active {
+/* añadida por sticky-tabs.js según el panel activo/visible */
+.cc-stabs-nav a.is-active,
+.cc-stabs-nav button.is-active {
   color: var(--cc-text-dark);
   font-weight: 700;
   border-color: var(--cc-accent-dark);
@@ -65,138 +68,34 @@
 
 
 /* =========================================================
-   DATOS RÁPIDOS
+   PANELES
 ========================================================= */
 
-.cc-tm-quick {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.8rem 1.5rem;
-  background: var(--cc-text-dark);
-  color: var(--cc-text-light);
-  border-radius: 3rem;
-  padding: 1rem 2.2rem;
-  margin-bottom: 2rem;
+/* modo pestañas: solo se ve el panel activo */
+.cc-stabs[data-mode="switch"] > .cc-stabs-content > .cc-stabs-panel {
+  display: none;
 }
 
-.cc-tm-quick div {
-  text-align: center;
-  font-size: 0.72rem;
-  line-height: 1.2;
-}
-
-.cc-tm-quick b {
+.cc-stabs[data-mode="switch"] > .cc-stabs-content > .cc-stabs-panel.is-active {
   display: block;
-  font-family: var(--cc-font-display);
-  font-weight: 400;
-  font-size: 1.5rem;
-  color: var(--cc-accent-light);
 }
 
-
-/* =========================================================
-   FASE 
-========================================================= */
-
-.cc-tm-phase {
-  font-family: var(--cc-font-display);
-  font-weight: 400;
-  font-size: 1.2rem;
-  color: var(--cc-accent-dark);
-  margin: 2rem 0 1rem;
-}
-
-.cc-tm-content > .cc-tm-phase:first-of-type {
-  margin-top: 0;
-}
-
-
-/* =========================================================
-   SECCIÓN
-========================================================= */
-
-.cc-tm-section {
-  margin-bottom: 2.2rem;
-  /* deja hueco para que la sección no quede tapada por la
-     navbar fija al saltar desde el índice o el select */
+/* modo scrollspy: todo visible, hueco para no tapar con la navbar fija */
+.cc-stabs[data-mode="scroll"] > .cc-stabs-content > .cc-stabs-panel {
   scroll-margin-top: calc(var(--cc-navbar-height, 82px) + 1rem);
 }
 
-.cc-tm-section h3 {
-  font-family: var(--cc-font-display);
-  font-weight: 400;
-  font-size: 1.5rem;
-  margin: 0 0 0.5rem;
-}
-
-.cc-tm-section p {
-  margin: 0 0 0.5rem;
-  color: var(--cc-muted-dark);
-  font-size: 1.02rem;
-  line-height: 1.5;
-}
-
-.cc-tm-section p:last-child {
-  margin-bottom: 0;
-}
-
-.cc-tm-sub {
-  margin-top: 0.4rem !important;
-  font-size: 0.92rem;
-}
-
-.cc-tm-sub b {
-  color: var(--cc-text-dark);
-}
-
-.cc-tm-sub i {
-  color: var(--cc-accent-dark);
-  font-style: normal;
-}
-
 
 /* =========================================================
-   ENLACES A DOCUMENTOS COMPLETOS
-========================================================= */
-
-.cc-tm-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.6rem;
-  margin-top: 1rem;
-  padding-top: 1.4rem;
-  border-top: 1px dashed rgba(140, 84, 138, 0.3);
-}
-
-.cc-tm-links a {
-  color: var(--cc-accent-dark);
-  font-weight: 700;
-  text-decoration: none;
-  transition: color var(--cc-transition);
-}
-
-.cc-tm-links a:hover,
-.cc-tm-links a:focus-visible {
-  color: var(--cc-accent-light);
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
+   MOBILE 
 
 @media (max-width: 736px) {
 
-  .cc-tos-map {
+  .cc-stabs {
     grid-template-columns: 1fr;
   }
 
-  .cc-tm-rail {
-    display: none;
-  }
-
-  .cc-tm-mobile {
+  .cc-stabs-mobile {
     display: block;
     position: sticky;
     top: calc(var(--cc-navbar-height, 64px) + 0.75rem);
@@ -213,19 +112,12 @@
     border-radius: 2px;
     appearance: none;
     -webkit-appearance: none;
-  }
-
-  .cc-tm-mobile {
-    background-image: linear-gradient(45deg, transparent 50%, var(--cc-accent-dark) 50%),
-                       linear-gradient(135deg, var(--cc-accent-dark) 50%, transparent 50%);
+    background-image:
+      linear-gradient(45deg, transparent 50%, var(--cc-accent-dark) 50%),
+      linear-gradient(135deg, var(--cc-accent-dark) 50%, transparent 50%);
     background-position: calc(100% - 1.3rem) center, calc(100% - 1rem) center;
     background-size: 0.35rem 0.35rem, 0.35rem 0.35rem;
     background-repeat: no-repeat;
-  }
-
-  .cc-tm-quick {
-    border-radius: 1.5rem;
-    padding: 1rem 1.4rem;
   }
 
 }
