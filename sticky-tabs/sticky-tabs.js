@@ -1,7 +1,17 @@
+/* =========================================================
+   INICIALIZACIÓN GLOBAL
+========================================================= */
+
 function initAllStickyTabs() {
+
   document.querySelectorAll(".cc-stabs").forEach((root) => {
 
-    if (root.dataset.stabsInitialized === "true") return;
+    /*
+     * Evita inicializar dos veces el mismo componente.
+     */
+    if (root.dataset.stabsInitialized === "true") {
+      return;
+    }
 
     root.dataset.stabsInitialized = "true";
 
@@ -12,230 +22,389 @@ function initAllStickyTabs() {
     }
 
   });
-}
 
+}
 
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initAllStickyTabs);
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    initAllStickyTabs
+  );
+
 } else {
+
   initAllStickyTabs();
+
 }
 
+
+/* =========================================================
+   COMPONENTE PRINCIPAL
+========================================================= */
 
 function initStickyTabs(root) {
 
   const mode = root.dataset.mode || "scroll";
 
-  const navItems = root.querySelectorAll(
-    ":scope > .cc-stabs-nav a, :scope > .cc-stabs-nav button"
+  const nav = root.querySelector(".cc-stabs-nav");
+
+  const mobile = root.querySelector(".cc-stabs-mobile");
+
+  const links = nav
+    ? Array.from(nav.querySelectorAll("a"))
+    : [];
+
+  const panels = Array.from(
+    root.querySelectorAll(".cc-stabs-panel")
   );
 
-  const mobile = root.querySelector(":scope > .cc-stabs-mobile");
-
-  const panels = root.querySelectorAll(
-    ":scope > .cc-stabs-content > .cc-stabs-panel"
-  );
-
-  if (!panels.length) return;
-
-
-  function targetOf(item) {
-    return item.dataset.target || item.getAttribute("href")?.slice(1);
-  }
-
-  function activate(id) {
-
-    navItems.forEach((item) => {
-      item.classList.toggle("is-active", targetOf(item) === id);
-    });
-
-    if (mobile && mobile.value !== id) {
-      mobile.value = id;
-    }
-
-    if (mode === "switch") {
-      panels.forEach((p) => {
-
-        const leaving =
-          p.classList.contains("is-active") && p.id !== id;
-
-        if (leaving) resetDetails(p);
-
-        p.classList.toggle("is-active", p.id === id);
-
-      });
-    }
-
+  if (!panels.length) {
+    return;
   }
 
 
-  panels.forEach((p) => {
-    p.querySelectorAll("details").forEach((d) => {
-      d.dataset.initialOpen = d.open;
-    });
-  });
-
-  function resetDetails(panel) {
-    panel.querySelectorAll("details").forEach((d) => {
-      d.open = d.dataset.initialOpen === "true";
-    });
-  }
-
+  /* =======================================================
+     MODO SWITCH
+  ======================================================= */
 
   if (mode === "switch") {
 
-    navItems.forEach((item) => {
-      item.addEventListener("click", (e) => {
-        e.preventDefault();
-        activate(targetOf(item));
+    let activePanel = panels.find(
+      (panel) => panel.classList.contains("is-active")
+    );
+
+    if (!activePanel) {
+      activePanel = panels[0];
+      activePanel.classList.add("is-active");
+    }
+
+    updateActiveLink(
+      links,
+      activePanel.id
+    );
+
+    links.forEach((link) => {
+
+      link.addEventListener("click", (event) => {
+
+        event.preventDefault();
+
+        const targetId =
+          link.getAttribute("href")?.replace("#", "");
+
+        if (!targetId) {
+          return;
+        }
+
+        switchPanel(
+          panels,
+          links,
+          targetId
+        );
+
       });
+
     });
 
-    mobile?.addEventListener("change", () => activate(mobile.value));
+    if (mobile) {
 
-    activate(targetOf(navItems[0]) || panels[0].id);
+      mobile.addEventListener("change", () => {
 
-  } else {
+        switchPanel(
+          panels,
+          links,
+          mobile.value
+        );
 
-    const prefersReducedMotion =
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    mobile?.addEventListener("change", () => {
-      document.getElementById(mobile.value)?.scrollIntoView({
-        behavior: prefersReducedMotion ? "auto" : "smooth",
-        block: "start",
       });
-    });
+
+    }
+
+    return;
+  }
+
+  /* -------------------------------------------------------
+     Scrollspy
+  ------------------------------------------------------- */
+
+  if (links.length && "IntersectionObserver" in window) {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) activate(entry.target.id);
-        });
+
+        const visiblePanels = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort(
+            (a, b) =>
+              b.intersectionRatio -
+              a.intersectionRatio
+          );
+
+
+        if (!visiblePanels.length) {
+          return;
+        }
+
+
+        const activeId =
+          visiblePanels[0].target.id;
+
+
+        updateActiveLink(
+          links,
+          activeId
+        );
+
+
+        if (mobile) {
+          mobile.value = activeId;
+        }
+
       },
-      { rootMargin: "-15% 0px -70% 0px" }
+      {
+        root: null,
+
+        rootMargin:
+          "calc(-1 * var(--cc-navbar-height, 82px)) 0px -45% 0px",
+
+        threshold: [
+          0.1,
+          0.25,
+          0.5,
+          0.75
+        ]
+
+      }
     );
 
-    panels.forEach((p) => observer.observe(p));
+
+    panels.forEach((panel) => {
+      observer.observe(panel);
+    });
+
+  }
+
+
+  /* -------------------------------------------------------
+     Selector móvil
+  ------------------------------------------------------- */
+
+  if (mobile) {
+
+    mobile.addEventListener("change", () => {
+
+      const targetId = mobile.value;
+
+      const target =
+        document.getElementById(targetId);
+
+      if (!target) {
+        return;
+      }
+
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+    });
 
   }
 
 }
 
 
-/* Modo alternativo para cuando position: sticky no funciona */
+/* =========================================================
+   CAMBIAR PANEL EN MODO SWITCH
+========================================================= */
+
+function switchPanel(
+  panels,
+  links,
+  targetId
+) {
+
+  const target =
+    panels.find(
+      (panel) => panel.id === targetId
+    );
+
+  if (!target) {
+    return;
+  }
+
+  panels.forEach((panel) => {
+
+    panel.classList.toggle(
+      "is-active",
+      panel === target
+    );
+
+  });
+
+  updateActiveLink(
+    links,
+    targetId
+  );
+
+}
+
+
+/* =========================================================
+   ACTUALIZAR LINK ACTIVO
+========================================================= */
+
+function updateActiveLink(
+  links,
+  activeId
+) {
+
+  links.forEach((link) => {
+
+    const linkId =
+      link.getAttribute("href")?.replace("#", "");
+
+    link.classList.toggle(
+      "is-active",
+      linkId === activeId
+    );
+
+  });
+
+}
+
+
+/* =========================================================
+   NAVEGACIÓN FIXED OPCIONAL
+========================================================= */
 
 function initFixedNav(root) {
 
-  const nav = root.querySelector(
-    ":scope > .cc-stabs-nav:not(.cc-stabs-nav--chips)"
+  const nav =
+    root.querySelector(".cc-stabs-nav");
+
+  if (!nav) {
+    return;
+  }
+
+  const originalRect =
+    nav.getBoundingClientRect();
+
+
+  const originalTop =
+    originalRect.top +
+    window.scrollY;
+
+
+  const originalLeft =
+    originalRect.left;
+
+
+  const originalWidth =
+    originalRect.width;
+
+  const placeholder =
+    document.createElement("div");
+
+  placeholder.style.display = "none";
+
+  placeholder.style.width =
+    `${originalWidth}px`;
+
+  placeholder.style.height =
+    `${originalRect.height}px`;
+
+  nav.parentNode.insertBefore(
+    placeholder,
+    nav
   );
 
-  const mobile = root.querySelector(":scope > .cc-stabs-mobile");
 
-  /* hueco que ocupa el select mientras está fijado, para que
-     el contenido no salte hacia arriba */
-  let spacer = null;
+  function updateFixedNav() {
 
-  if (mobile) {
-    spacer = document.createElement("div");
-    spacer.hidden = true;
-    mobile.before(spacer);
-  }
+    if (
+      window.matchMedia(
+        "(max-width: 736px)"
+      ).matches
+    ) {
 
-  let navWidth = 0;
-  let ticking = false;
+      nav.classList.remove("is-fixed");
 
-  function release(el) {
-    el.classList.remove("is-fixed");
-    el.style.top = el.style.left = el.style.width = "";
-  }
+      placeholder.style.display = "none";
 
-  function update() {
+      nav.style.removeProperty("top");
+      nav.style.removeProperty("left");
+      nav.style.removeProperty("width");
 
-    ticking = false;
-
-    const rect = root.getBoundingClientRect();
-    const isMobile = window.matchMedia("(max-width: 736px)").matches;
-
-    const navbarHeight = parseFloat(
-      getComputedStyle(document.documentElement)
-        .getPropertyValue("--cc-navbar-height")
-    ) || 0;
-
-    const offset = navbarHeight + (isMobile ? 12 : 24);
+      return;
+    }
 
 
-    /* ---------- escritorio: índice lateral ---------- */
+    const navbarHeight =
+      parseFloat(
+        getComputedStyle(document.documentElement)
+          .getPropertyValue("--cc-navbar-height")
+      ) || 82;
 
-    if (nav && !isMobile) {
 
-      const h = nav.offsetHeight;
+    const offset =
+      navbarHeight + 1.5 * 16;
 
-      if (rect.top <= offset && rect.bottom > offset) {
+
+    if (
+      window.scrollY >
+      originalTop - offset
+    ) {
+
+      if (!nav.classList.contains("is-fixed")) {
 
         nav.classList.add("is-fixed");
-        nav.style.width = navWidth + "px";
-        nav.style.left = rect.left + "px";
-        nav.style.top = Math.min(offset, rect.bottom - h) + "px";
 
-      } else {
-
-        release(nav);
-        navWidth = nav.getBoundingClientRect().width;
+        placeholder.style.display =
+          "block";
 
       }
 
-      if (!navWidth) navWidth = nav.getBoundingClientRect().width;
 
-    }
+      nav.style.top =
+        `${offset}px`;
 
+      nav.style.left =
+        `${originalLeft}px`;
 
-    /* ---------- móvil: select ---------- */
+      nav.style.width =
+        `${originalWidth}px`;
 
-    if (mobile && isMobile) {
+    } else {
 
-      const h = mobile.offsetHeight;
+      nav.classList.remove("is-fixed");
 
-      if (rect.top <= offset && rect.bottom > offset + h) {
+      placeholder.style.display =
+        "none";
 
-        if (spacer.hidden) {
-          spacer.style.height =
-            h + parseFloat(getComputedStyle(mobile).marginBottom) + "px";
-          spacer.hidden = false;
-        }
-
-        mobile.classList.add("is-fixed");
-        mobile.style.top = offset + "px";
-        mobile.style.left = rect.left + "px";
-        mobile.style.width = rect.width + "px";
-
-      } else {
-
-        release(mobile);
-        spacer.hidden = true;
-
-      }
-
-    } else if (mobile) {
-
-      /* al pasar de móvil a escritorio, limpiar lo que quedara fijado */
-      release(mobile);
-      spacer.hidden = true;
+      nav.style.removeProperty("top");
+      nav.style.removeProperty("left");
+      nav.style.removeProperty("width");
 
     }
 
   }
 
-  function requestUpdate() {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(update);
-  }
 
-  window.addEventListener("scroll", requestUpdate, { passive: true });
-  window.addEventListener("resize", requestUpdate);
+  window.addEventListener(
+    "scroll",
+    updateFixedNav,
+    { passive: true }
+  );
 
-  update();
+
+  window.addEventListener(
+    "resize",
+    updateFixedNav
+  );
+
+
+  updateFixedNav();
 
 }
