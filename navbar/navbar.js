@@ -198,7 +198,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   });
+  
 
+  /* =======================================================
+     CLOSE DESKTOP DROPDOWN WHEN CLICKING A LINK
+  ======================================================= */
+
+  const desktopDropdownLinks =
+    desktopDropdownMenu?.querySelectorAll("a");
+
+  desktopDropdownLinks?.forEach((link) => {
+
+    link.addEventListener("click", () => {
+      closeDesktopDropdown();
+    });
+
+  });
 
   /* =======================================================
      CLICK OUTSIDE DESKTOP DROPDOWN
