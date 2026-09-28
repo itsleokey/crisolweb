@@ -8,7 +8,6 @@
   gap: 2.5rem;
   max-width: 48rem;
   margin: 2rem auto;
-  color: var(--cc-text-dark);
 }
 
 
@@ -55,6 +54,7 @@
   cursor: pointer;
   text-transform: uppercase;
   line-height: 1;
+  font-size: 0.7rem;
   font-weight: 600;
   transition:
     color var(--cc-transition),
