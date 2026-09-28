@@ -8,7 +8,6 @@
   gap: 2.5rem;
   max-width: 48rem;
   margin: 2rem auto;
-  color: var(--cc-text-dark);
 }
 
 
@@ -23,43 +22,45 @@
   font-size: 0.85rem;
 }
 
+
 .cc-stabs-nav b {
   display: block;
   margin: 1rem 0 0.3rem;
-
   font-family: var(--cc-font-display);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 400;
-
+  text-transform: uppercase;
   color: var(--cc-accent-dark);
 }
+
 
 .cc-stabs-nav b:first-child {
   margin-top: 0;
 }
 
+
 .cc-stabs-nav a,
 .cc-stabs-nav button {
   display: block;
   width: 100%;
-
   padding: 0.2rem 0 0.2rem 0.7rem;
   border: 0;
   border-left: 3px solid rgba(140, 84, 138, 0.25);
-
   background: none;
-
   font-family: var(--cc-font-body);
   color: var(--cc-muted-dark);
   text-align: left;
   text-decoration: none;
-
   cursor: pointer;
-
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: 0.7rem;
+  font-weight: 600;
   transition:
     color var(--cc-transition),
     border-color var(--cc-transition);
 }
+
 
 .cc-stabs-nav a:hover,
 .cc-stabs-nav a:focus-visible,
@@ -67,6 +68,7 @@
 .cc-stabs-nav button:focus-visible {
   color: var(--cc-text-dark);
 }
+
 
 .cc-stabs-nav a.is-active,
 .cc-stabs-nav button.is-active {
@@ -95,6 +97,7 @@
   display: none;
 }
 
+
 .cc-stabs[data-mode="switch"]
   > .cc-stabs-content
   > .cc-stabs-panel.is-active {
@@ -109,43 +112,38 @@
 .cc-stabs[data-mode="scroll"]
   > .cc-stabs-content
   > .cc-stabs-panel {
-  scroll-margin-top: calc(var(--cc-navbar-height, 82px) + 1rem);
+  scroll-margin-top:
+    calc(var(--cc-navbar-height, 82px) + 1rem);
 }
 
 
 /* =========================================================
-   NAVEGACIÓN FIJA
+   RESUMEN
 ========================================================= */
 
-.cc-stabs-nav.is-fixed {
-  position: fixed;
-  z-index: 20;
-}
-
-
-/* =========================================================
-   RESUMEN DE TÉRMINOS DE SERVICIO
-========================================================= */
-
-.cc-tos-summary .cc-stabs-panel {
+.cc-stabs-summary .cc-stabs-panel {
   margin-bottom: 2.2rem;
 }
 
 
-/* Títulos de cada punto */
+/* Títulos de los puntos */
 
-.cc-tos-summary .cc-stabs-panel h3 {
+.cc-stabs-summary .cc-stabs-panel h3 {
   margin: 0 0 0.5rem;
 
   font-family: var(--cc-font-display);
-  font-size: 1.5rem;
   font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1;
+
+  text-transform: uppercase;
+  color: var(--cc-accent-dark);
 }
 
 
-/* Texto de los paneles */
+/* Texto de los puntos */
 
-.cc-tos-summary .cc-stabs-panel p {
+.cc-stabs-summary .cc-stabs-panel p {
   margin: 0 0 0.5rem;
 
   color: var(--cc-muted-dark);
@@ -153,50 +151,55 @@
   line-height: 1.5;
 }
 
-.cc-tos-summary .cc-stabs-panel p:last-child {
+
+.cc-stabs-summary .cc-stabs-panel p:last-child {
   margin-bottom: 0;
 }
 
 
-/* Separadores de sección */
+/* Etiquetas de sección */
 
-.cc-tos-summary .cc-stabs-section-label {
+.cc-stabs-summary .cc-stabs-section-label {
   margin: 2rem 0 1rem;
 
   font-family: var(--cc-font-display);
-  font-size: 1.2rem;
   font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1;
 
   color: var(--cc-accent-dark);
 }
 
-.cc-tos-summary
+
+.cc-stabs-summary
   > .cc-stabs-content
   > .cc-stabs-section-label:first-child {
   margin-top: 0;
 }
 
 
-/* Texto secundario dentro de un panel */
+/* Texto secundario */
 
-.cc-tos-summary .cc-stabs-panel .cc-tos-sub {
+.cc-stabs-summary .cc-stabs-note {
   margin-top: 0.4rem;
   font-size: 0.92rem;
 }
 
-.cc-tos-summary .cc-tos-sub b {
+
+.cc-stabs-summary .cc-stabs-note b {
   color: var(--cc-text-dark);
 }
 
-.cc-tos-summary .cc-tos-sub i {
+
+.cc-stabs-summary .cc-stabs-note i {
   color: var(--cc-accent-dark);
   font-style: normal;
 }
 
 
-/* Enlaces a documentos completos */
+/* Enlaces finales */
 
-.cc-tos-summary .cc-tos-links {
+.cc-stabs-summary .cc-stabs-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1.6rem;
@@ -207,16 +210,17 @@
   border-top: 1px dashed rgba(140, 84, 138, 0.3);
 }
 
-.cc-tos-summary .cc-tos-links a {
+
+.cc-stabs-summary .cc-stabs-links a {
   color: var(--cc-accent-dark);
   font-weight: 700;
   text-decoration: none;
-
   transition: color var(--cc-transition);
 }
 
-.cc-tos-summary .cc-tos-links a:hover,
-.cc-tos-summary .cc-tos-links a:focus-visible {
+
+.cc-stabs-summary .cc-stabs-links a:hover,
+.cc-stabs-summary .cc-stabs-links a:focus-visible {
   color: var(--cc-accent-light);
 }
 
@@ -231,9 +235,11 @@
     grid-template-columns: 1fr;
   }
 
+
   .cc-stabs-nav {
     display: none;
   }
+
 
   .cc-stabs-mobile {
     display: block;
@@ -283,10 +289,6 @@
       0.35rem 0.35rem;
 
     background-repeat: no-repeat;
-  }
-
-  .cc-stabs-nav.is-fixed {
-    display: none;
   }
 
 }
