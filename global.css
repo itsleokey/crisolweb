@@ -43,6 +43,6 @@ body {
   font-family: var(--cc-font-body);
 }
 
-#site-wrapper {
+.site-wrapper {
   overflow: visible;
 }
